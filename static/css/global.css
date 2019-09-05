@@ -1,0 +1,195 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color:black;
+    font-size: 16px;
+    background-color: white;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+}
+
+h1{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+h3{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline-block;
+    padding-right:20px;
+    padding-top:10px;
+    font-size: 16px;
+}
+
+li a {
+    display: block;
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header{
+    border-bottom: 2px;
+    border-color:black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menu{
+    text-align: right;
+    margin-top: 50px;
+}
+
+.menu li{
+    padding: 0;
+}
+
+.menu li a{
+    color: gray;
+    font-size: 20px;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.menu li a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.menu_button{
+    display:block;
+}
+
+.menu_button a{
+    text-align: right;
+    color: black !important;
+}
+
+.max_w{
+    max-width: 900px;
+}
+
+.preview{
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.title{
+    font-size: 24px;
+    margin-bottom: 0;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.readmore{
+    text-align:right;
+    padding: 0;
+    color: gray;
+}
+
+.meta{
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: gray;
+    padding:0;
+}
+
+.tag{
+    display: inline-block;
+    font-style: italic;
+}
+
+.author{
+}
+
+.full_header{
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgb(236, 236, 236);
+    background-color: white;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 10px;
+}
+
+.sort{
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    padding: 0;
+}
+
+.hidden{
+    display:none;
+}
+
+.blockquote {
+    padding: 60px 80px 40px;
+    position: relative;
+    border-left: none;
+}
+.blockquote p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px;
+    font-weight: 700px;
+    text-align: center;
+}
+
+
+.blockquote:before {
+  position: absolute;
+  top: 0;
+  
+  content:"\"";
+  font-size: 200px;
+  color: rgba(0,0,0,0.1);
+   
+}
+
+.quote_author{
+    font-size: 20px;
+    text-align: center;
+}
+
+footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.foot{
+    border-top: solid;
+    border-width: 1px;
+    border-color: rgb(236, 236, 236);
+    margin-top: 20px;
+    padding: 0;
+}
+
+.foot .max_w{
+    padding: 0;
+}
+
+.foot_menu{
+    text-align: right;
+}
