@@ -10,8 +10,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://cdn.quilljs.com/1.2.2/quill.js"></script>
 
-        <script src="static/js/global.js"></script> 
-        <script src="static/js/editor.js"></script> 
+        <script src="{{ url_for('static', filename='js/global.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/editor.js') }}"></script> 
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -21,8 +21,8 @@
         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
         <link href="https://cdn.quilljs.com/1.2.2/quill.bubble.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="static/css/global.css">
-        <link rel="stylesheet" href="static/css/editor.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}">
         
         <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     </head>
