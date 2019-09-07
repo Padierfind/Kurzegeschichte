@@ -1,0 +1,99 @@
+.login_form_inputs{
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+    height: 50px;
+    border: 0;
+    padding: 15px;
+}
+
+.login_form{
+    margin-top: 20px;
+}
+
+.title{
+    margin-bottom: 15px;
+}
+
+.continue_button{
+    width: 100%;
+    bottom: 0;
+}
+
+.form_wrapper{
+    height: 350px;
+}
+
+.agb_label{
+    display: inline-block;    
+    width: 90%;
+    padding-left: 15px;
+}
+
+.register_button{
+    color: white;
+    background: black;
+    border-color: black;
+}
+
+.check {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+    margin-left: 15px;
+  }
+
+  .check:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: whitesmoke;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: gray;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+  }
+  .check svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+  }
+  .check svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+  }
+  .check:hover:before {
+    opacity: 1;
+  }
+  .check:hover svg {
+    stroke: black;
+  }
+  #cbx:checked + .check svg {
+    stroke: black;
+  }
+  #cbx:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  #cbx:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+  
