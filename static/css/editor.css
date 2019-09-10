@@ -36,3 +36,25 @@
 .next_container{
     text-align: right;
 }
+
+.input_field_preview{
+    border: 1px solid white;
+
+    margin-bottom: 30px;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.input_field_preview::-webkit-input-placeholder {
+    font-style: italic;
+ }
+ .input_field_preview:-moz-placeholder {
+    font-style: italic;  
+ }
+ .input_field_preview::-moz-placeholder {
+    font-style: italic;  
+ }
+ .input_field_preview:-ms-input-placeholder {  
+    font-style: italic; 
+ }
