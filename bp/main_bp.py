@@ -1,16 +1,17 @@
 print("In File: bp/main_bp.py")
 
-from flask import Blueprint, render_template, abort
+from flask import Blueprint, render_template, abort, request
 from jinja2 import TemplateNotFound
 import os
 
-from src.db_handling import db_handler
+from src.db_handling import DbHandler
 
 template_dir = os.path.abspath('templates/')
 
 main_bp = Blueprint('main_bps', __name__, template_folder=template_dir)
 
-@main_bp.route('/')
+
+@main_bp.route('/', methods=['GET'])
 def display_main_index():
     print("In Method: display_main_index()")
     
@@ -19,7 +20,8 @@ def display_main_index():
     except TemplateNotFound:
         abort(404)
 
-@main_bp.route('/story')
+
+@main_bp.route('/story', methods=['GET'])
 def display_story():
     print("In Method: display_story()")
 
@@ -28,17 +30,18 @@ def display_story():
     except TemplateNotFound:
         abort(404)
 
-@main_bp.route('/test')
-def test():
-    print("In Method: test()")
 
-    handler = db_handler()
+@main_bp.route('/get_story_data/<story_id>', methods=['GET'])
+def ajax_get_story_data(story_id):
+    print("In Method: ajax_get_story_data()")
 
-    test_dict = {
-        "Hallo" : "asbdqweoiwqe",
-        "Ich heiße" : "Patrick"
-    }
+    handler = DbHandler()
+    db = 'test'  # Change when production
+    collection = 'stories'
+    result_of_db_operation = handler.read_one_doc_by_id_from_database(db_name=db, collection_name=collection,
+                                                                      doc_id=story_id)
 
-    db = "tests"
-    collection = "unit_tests"
-    handler.write_to_database(db_name=db, collection_name=collection, json_to_write=test_dict)
+    if result_of_db_operation['success'] is True:
+        return result_of_db_operation
+    else:
+        return 'NAY'

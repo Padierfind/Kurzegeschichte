@@ -5,4 +5,12 @@
 
 .text_block{
     text-align: justify;
+    column-count: 2;
+    column-gap: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .text_block{
+        column-count: 1;
+    }
 }

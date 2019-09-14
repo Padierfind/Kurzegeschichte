@@ -3,8 +3,11 @@
 }
 
 .editor_custom{
-    min-height: 300px;
+    height: calc(100vh - 390px);
+    min-height: 100px;
     padding: 0;
+    padding-bottom: 30px;
+    padding-top: 30px;
     font-size: 16px;
 }
 
@@ -20,8 +23,6 @@
 .input_field_title{
     /**border: 1px solid #ccc;**/
     border: 1px solid white;
-
-    margin-bottom: 30px;
     width: 100%;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -35,11 +36,11 @@
 
 .next_container{
     text-align: right;
+    padding: 0;
 }
 
 .input_field_preview{
     border: 1px solid white;
-
     margin-bottom: 30px;
     width: 100%;
     padding-bottom: 15px;
