@@ -26,7 +26,7 @@ def display_editor():
 def view_draft():
     print('In Method: view_draft()')
 
-    return render_template("story.html")
+    return render_template("story_preview.html")
 
 
 @user_bp.route('/save_draft', methods=['POST'])

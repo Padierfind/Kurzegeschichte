@@ -45,6 +45,7 @@
     width: 100%;
     padding-bottom: 15px;
     padding-top: 15px;
+    resize: none;
 }
 
 .input_field_preview::-webkit-input-placeholder {
