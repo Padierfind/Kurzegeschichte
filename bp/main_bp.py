@@ -21,6 +21,16 @@ def display_main_index():
         abort(404)
 
 
+@main_bp.route('/login', methods=['GET'])
+def display_login_registration_page():
+    print("In Method: display_login_registration_page()")
+
+    try:
+        return render_template('login.html')
+    except TemplateNotFound:
+        abort(404)
+
+
 @main_bp.route('/story', methods=['GET'])
 def display_story():
     print("In Method: display_story()")
