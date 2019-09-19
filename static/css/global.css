@@ -212,3 +212,18 @@ footer{
     color: white;
     background-color: black;
 }
+
+.call_to_action{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-style: normal;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.call_to_action_text{
+    margin-bottom: 15px;
+}

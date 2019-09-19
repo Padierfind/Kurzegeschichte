@@ -24,5 +24,17 @@ $( document ).ready(function() {
         });
         $("#categories_preview").html(selected);
     });
-
 });
+
+function publish_story(){
+    let form = $("#preview_form");
+
+    $("#user_id").val(user_id);
+    $("#title").val(title);
+    $("#timestamp").val(timestamp);
+    $("#story_id").val(story_id);
+
+    $("#reading_time").val(reading_time);
+
+    form.submit();
+}

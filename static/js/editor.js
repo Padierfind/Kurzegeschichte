@@ -8,7 +8,7 @@ $( document ).ready(function() {
 });
 
 function PostContentToSaveDraft(){
-    var form = $("#editor_form");
+    var form = $("#preview_form");
     var content = quill.root.innerHTML;
     $("#content").val(content);
     form.submit();

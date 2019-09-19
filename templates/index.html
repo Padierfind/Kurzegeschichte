@@ -3,8 +3,10 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-        <script src="{{ url_for('static', filename='js/global.js') }}"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -88,113 +90,14 @@
 
 
         <div class="container max_w">
-            <div class="row">
+            <div id="preview_container" class="row">
 
-                <div class="col-sm-6 preview">
-                    <hr>
-                    <div class="title">
-                        Story Title
-                    </div>
-                    <div class="meta author">
-                        Geschrieben von Patrick Tobler
-                    </div>    
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    </p>
-                    
-                    <div class="col-sm-8 meta">
-                        <div class="tag">
-                            #Romantik
-                        </div>
-                        <div class="tag">
-                            #Krimi
-                        </div>
-                        <div>
-                            Lesezeit ca. 12 Minuten
-                        </div>
-                    </div>
-                    <div class="col-sm-4 readmore">Lesen</div>
-
+            </div>
+            <div class="col-sm-12 call_to_action">
+                <div class="call_to_action_text">
+                    Und wohin wird uns deine Geschichte führen?
                 </div>
-
-                <div class="col-sm-6 preview">
-                    <hr>
-                    <div class="title">
-                        Story Title
-                    </div>
-                    <div class="meta author">
-                        Geschrieben von Patrick Tobler
-                    </div>    
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    </p>
-                    
-                    <div class="col-sm-8 meta">
-                        <div class="tag">
-                            #Romantik
-                        </div>
-                        <div class="tag">
-                            #Krimi
-                        </div>
-                        <div>
-                            Lesezeit ca. 12 Minuten
-                        </div>
-                    </div>
-                    <div class="col-sm-4 readmore">Lesen</div>
-                </div>
-
-                <div class="col-sm-6 preview">
-                    <hr>
-                    <div class="title">
-                        Story Title
-                    </div>
-                    <div class="meta author">
-                        Geschrieben von Patrick Tobler
-                    </div>    
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    </p>
-                    
-                    <div class="col-sm-8 meta">
-                        <div class="tag">
-                            #Romantik
-                        </div>
-                        <div class="tag">
-                            #Krimi
-                        </div>
-                        <div>
-                            Lesezeit ca. 12 Minuten
-                        </div>
-                    </div>
-                    <div class="col-sm-4 readmore">Lesen</div>
-                </div>
-    
-                <div class="col-sm-6 preview">
-                    <hr>
-                    <div class="title">
-                        Story Title
-                    </div>
-                    <div class="meta author">
-                        Geschrieben von Patrick Tobler
-                    </div>    
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    </p>
-                    
-                    <div class="col-sm-8 meta">
-                        <div class="tag">
-                            #Romantik
-                        </div>
-                        <div class="tag">
-                            #Krimi
-                        </div>
-                        <div>
-                            Lesezeit ca. 12 Minuten
-                        </div>
-                    </div>
-                    <div class="col-sm-4 readmore">Lesen</div>
-                </div>
-    
+                <button type="button" class="submit_button">Schreibe jetzt</button>
             </div>
         </div>
 

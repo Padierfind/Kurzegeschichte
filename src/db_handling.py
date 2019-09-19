@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo, MongoClient
 from bson.objectid import ObjectId
 from configs import db_config
 
+from src.helper_functions import recursive_list_convert_object_id_to_str
 
 class DbHandler:
 
@@ -52,3 +53,29 @@ class DbHandler:
         client.close()
 
         return {'success': True, 'result': result}
+
+    def read_document_previews(self, db_name: str, collection_name: str, starting_id: int, amount_of_documents: int):
+        print("In Method: read_document_previews()")
+
+        client, collection = self.open_collection(db_name, collection_name)
+
+        try:
+            result = collection.find().sort('{$natural:-1}').limit(amount_of_documents).skip(starting_id)
+            result_as_dict = []
+            for x in result:
+                result_as_dict.append(x)
+
+            for obj in result_as_dict:
+                obj['_id'] = str(obj['_id'])
+
+        except Exception as e:
+            print("Exception Thrown:")
+            print(e)
+
+            client.close()
+
+            return {'success': False}
+
+        client.close()
+
+        return {'success': True, 'result': result_as_dict}
