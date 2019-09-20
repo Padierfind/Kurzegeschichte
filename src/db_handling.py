@@ -6,6 +6,7 @@ from configs import db_config
 
 from src.helper_functions import recursive_list_convert_object_id_to_str
 
+
 class DbHandler:
 
     def open_collection(self, db_name: str, collection_name: str):
@@ -41,6 +42,31 @@ class DbHandler:
 
         try:
             result = collection.find_one({"_id": ObjectId(doc_id)})
+            result['_id'] = str(result['_id'])
+        except Exception as e:
+            print("Exception Thrown:")
+            print(e)
+
+            client.close()
+
+            return {'success': False}
+
+        client.close()
+
+        return {'success': True, 'result': result}
+
+    def read_one_doc_by_param_from_database(self, db_name: str, collection_name: str,
+                                            doc_value: str, doc_param: str) -> dict:
+        print("In Method: read_one_doc_by_param_from_database()")
+
+        client, collection = self.open_collection(db_name, collection_name)
+
+        dict_to_find = {
+            doc_param: doc_value
+        }
+
+        try:
+            result = collection.find_one(dict_to_find)
             result['_id'] = str(result['_id'])
         except Exception as e:
             print("Exception Thrown:")

@@ -49,12 +49,12 @@
                     <div class="title">
                             Login
                     </div>
-                    <form>
+                    <form action="/login_user" method="POST">
                         <div class="form_wrapper">
                             <input class="login_form_inputs" type="email" name="email" placeholder="Email">
                             <input class="login_form_inputs" type="password" name="password" placeholder="Passwort"><br>
                         </div>
-                        <button type="button" class="submit_button continue_button">Login</button> 
+                        <button type="submit" class="submit_button continue_button">Login</button>
                     </form>
 
                 </div>
@@ -62,7 +62,7 @@
                     <div class="title">
                             Registrierung
                     </div>
-                    <form>
+                    <form action="/register_user" method="POST">
                         <div class="form_wrapper">
                             <input class="login_form_inputs" type="name" name="name" placeholder="Benutzername"><br>
                             <input class="login_form_inputs" type="email" name="email" placeholder="Email">
@@ -79,7 +79,7 @@
                                 Hiermit bestätige ich die Allgemeinen Geschäftsbedingungen gelesen und akzeptiert zu haben.
                             </div>
                         </div>
-                        <button type="button" class="submit_button continue_button register_button">Registrieren</button> 
+                        <button type="submit" class="submit_button continue_button register_button">Registrieren</button>
                     </form> 
                 </div>
 

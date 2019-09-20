@@ -1,3 +1,7 @@
+html{
+    margin-left: calc(100vw - 100%);
+}
+
 body{
     font-family: 'Source Sans Pro', sans-serif;
     color:black;
