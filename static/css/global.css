@@ -231,3 +231,17 @@ footer{
 .call_to_action_text{
     margin-bottom: 15px;
 }
+
+.notification{
+    background-color: black;
+    color: white;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    padding: 30px;
+    z-index: 111;
+    width: 100%;
+    display: none;
+
+}

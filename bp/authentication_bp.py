@@ -39,10 +39,21 @@ def register_user():
         print(e)
 
     if signup == True:
-        return redirect(url_for('authentication_bps.display_login_registration_page'))
+        return redirect(url_for('authentication_bps.display_login_registration_page', notification='Herzlich '
+                                                                                                   'Willkommen!'
+                                                                                                   ' Bitte schau in '
+                                                                                                   'deinem Email '
+                                                                                                   'Postfach nach und '
+                                                                                                   'bestätige deine '
+                                                                                                   'Registrierung.'))
     else:
         # TODO ERROR MESSAGE
-        return redirect(url_for('authentication_bps.display_login_registration_page'))
+        return redirect(url_for('authentication_bps.display_login_registration_page', notification='Etwas ist bei deiner'
+                                                                                                   ' Registrierung '
+                                                                                                   'fehlgeschlagen. '
+                                                                                                   'Das Tut uns leid. '
+                                                                                                   'Bitte versuche es '
+                                                                                                   'erneut.'))
 
 
 @authentication_bp.route('/login_user', methods=['POST'])
@@ -55,17 +66,20 @@ def verify_and_login_user():
     user = User(email=email, password=password)
     user_from_db = user.check_if_user_exists()
     if not user_from_db:
-        #TODO ERROR MESSAGE
-        return redirect(url_for('authentication_bps.display_login_registration_page'))
+        return redirect(url_for('authentication_bps.display_login_registration_page', notification='Bitte registriere '
+                                                                                                   'dich zuerst.'))
 
     is_authenticated = user.check_password(saved_password=user_from_db['result']['password'], input_password=password)
 
     if is_authenticated:
         login_user(user)
-        return redirect(url_for('authentication_bps.display_login_registration_page'))
+        return redirect(url_for('main_bps.display_main_index', notification='Willkommen zurück!'))
     else:
-        #TODO ERROR MESSAGE
-        return redirect(url_for('authentication_bps.display_login_registration_page'))
+        return redirect(url_for('authentication_bps.display_login_registration_page', notification='Etwas stimmt mit '
+                                                                                                   'deinem Passwort'
+                                                                                                   ' nicht. Bitte '
+                                                                                                   'probiere es '
+                                                                                                   'erneut.'))
 
 @authentication_bp.route("/logout")
 @login_required
@@ -73,4 +87,7 @@ def logout_user():
     print("In Method: logout_user()")
 
     logout_user()
-    return redirect(url_for('authentication_bps.display_login_registration_page'))
+    return redirect(url_for('authentication_bps.display_login_registration_page', notification='Du wurdest ausgeloggt. '
+                                                                                               'Wir freuen uns auf '
+                                                                                               'deinen nächsten '
+                                                                                               'Besuch.'))

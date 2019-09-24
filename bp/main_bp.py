@@ -44,11 +44,11 @@ def ajax_get_story_data(story_id):
     if result_of_db_operation['success'] is True:
         return result_of_db_operation
     else:
-        return 'NAY'
+        return 'False'
 
 @main_bp.route('/get_story_previews/<index>', methods=['GET'])
 def get_story_previews(index):
-    print("In Method: ajax_get_story_data()")
+    print("In Method: get_story_previews()")
 
     handler = DbHandler()
     db = 'test'  # Change when production
@@ -59,4 +59,4 @@ def get_story_previews(index):
     if result_of_db_operation['success'] is True:
         return result_of_db_operation
     else:
-        return 'NAY'
+        return 'False'

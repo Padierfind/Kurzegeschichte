@@ -26,7 +26,10 @@ def display_editor():
 def view_draft():
     print('In Method: view_draft()')
 
-    return render_template("story_preview.html")
+    try:
+        return render_template("story_preview.html")
+    except TemplateNotFound:
+        abort(404)
 
 
 @user_bp.route('/save_draft', methods=['POST'])
@@ -56,7 +59,8 @@ def save_draft_and_redirect():
     if result_of_db_operation['success'] is True:
         return redirect(url_for('user_bps.view_draft', story_id=result_of_db_operation['doc_id']))
     else:
-        return "NAY"
+        return redirect(url_for('user_bps.display_editor', notification='Etwas ist schief gelaufen. Bitte versuche es '
+                                                                        'später noch ein Mal.'))
 
 
 @user_bp.route('/publish_story', methods=['POST'])
@@ -90,4 +94,5 @@ def publish_story_and_redirect():
     if result_of_db_operation['success'] is True:
         return redirect(url_for('main_bps.display_story', story_id=story_id))
     else:
-        return "NAY"
+        return redirect(url_for('user_bps.display_editor', notification='Etwas ist schief gelaufen. Bitte versuche es '
+                                                                        'später noch ein Mal.'))

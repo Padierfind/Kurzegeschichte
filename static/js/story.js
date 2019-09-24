@@ -1,7 +1,6 @@
 var title, content, story_id, timestamp, user_id, reading_time;
 
 $( document ).ready(function() {
-
     var searchParams = new URLSearchParams(window.location.search)
     if(searchParams.has('story_id')){
         story_id = searchParams.get('story_id');
@@ -9,6 +8,12 @@ $( document ).ready(function() {
         $.ajax({
             url: "/get_story_data/" + story_id
         }).done(function (result) {
+            if(result == "False"){
+                display_notification("Wir haben gerade Probleme, die Geschichte aus der " +
+                    "Datenbank zu laden. Bitte versuche es später noch einmal.");
+            return;
+        }
+
             console.log(result);
             title = result['result']['title'];
             content = result['result']['content'];
@@ -24,7 +29,8 @@ $( document ).ready(function() {
 
         });
     }else {
-        // TODO: Throw Error
+        display_notification("Leider ist dieses Blatt noch unbeschrieben. Aber vielleicht entspringt ja " +
+            "deiner Kreativität eine neue Geschichte, die diese Seite füllen könnte.");
     }
 
 });

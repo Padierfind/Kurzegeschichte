@@ -11,6 +11,12 @@ function ajax_get_story_previews(index){
     $.ajax({
         url: "/get_story_previews/" + index
     }).done(function (result) {
+        if(result == "False"){
+            display_notification("Wir haben gerade Probleme, die Geschichten aus der " +
+                "Datenbank zu laden. Bitte versuche es später noch einmal.");
+            return;
+        }
+
         var previews = result['result'];
 
         previews.forEach(function(element) {
