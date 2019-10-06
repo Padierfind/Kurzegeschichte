@@ -21,6 +21,7 @@ def display_login_registration_page():
     except TemplateNotFound:
         abort(404)
 
+
 @authentication_bp.route('/register_user', methods=['POST'])
 def register_user():
     print("In Method: register_user()")
@@ -80,6 +81,7 @@ def verify_and_login_user():
                                                                                                    ' nicht. Bitte '
                                                                                                    'probiere es '
                                                                                                    'erneut.'))
+
 
 @authentication_bp.route("/logout")
 @login_required

@@ -87,6 +87,8 @@ class DbHandler:
 
         try:
             result = collection.find().sort('{$natural:-1}').limit(amount_of_documents).skip(starting_id)
+            total_length = result.count()
+
             result_as_dict = []
             for x in result:
                 result_as_dict.append(x)
@@ -104,4 +106,4 @@ class DbHandler:
 
         client.close()
 
-        return {'success': True, 'result': result_as_dict}
+        return {'success': True, 'result': result_as_dict, 'total_length': total_length}

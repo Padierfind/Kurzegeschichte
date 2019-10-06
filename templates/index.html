@@ -17,6 +17,8 @@
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+
         <title>Kurzegeschichte.de</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
@@ -96,13 +98,27 @@
 
         <div class="container max_w">
             <div id="preview_container" class="row">
-
             </div>
             <div class="col-sm-12 call_to_action">
                 <div class="call_to_action_text">
                     Und wohin wird uns deine Geschichte führen?
                 </div>
-                <button type="button" class="submit_button">Schreibe jetzt</button>
+                <a href="/editor"><button type="button" class="submit_button">Schreibe jetzt</button></a>
+            </div>
+            <div id="preview_container_2" class="row">
+            </div>
+            <div id="page_counter" class="page_index_container">
+                <a id="previous_page_link" href="">
+                    <button id="previous_page_button" class="change_page_button">
+                        <
+                    </button>
+                </a>
+                <p id="page_index" class="page_index">1/10</p>
+                <a id="next_page_link" href="">
+                    <button id="next_page_button" class="change_page_button">
+                        >
+                    </button>
+                </a>
             </div>
         </div>
 

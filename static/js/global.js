@@ -13,9 +13,9 @@ $( document ).ready(function() {
 
 function display_notification(notification_text){
     $("#notification").text(notification_text);
-    $("#notification").slideDown("slow");
+    $("#notification").slideDown("fast");
 
     setTimeout(function() {
-        $("#notification").slideUp("slow");
+        $("#notification").slideUp("fast");
     }, 4500);
 }

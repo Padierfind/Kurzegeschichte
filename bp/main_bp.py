@@ -46,6 +46,7 @@ def ajax_get_story_data(story_id):
     else:
         return 'False'
 
+
 @main_bp.route('/get_story_previews/<index>', methods=['GET'])
 def get_story_previews(index):
     print("In Method: get_story_previews()")
@@ -54,7 +55,7 @@ def get_story_previews(index):
     db = 'test'  # Change when production
     collection = 'previews'
     result_of_db_operation = handler.read_document_previews(db_name=db, collection_name=collection,
-                                                                      starting_id=int(index), amount_of_documents=20)
+                                                            starting_id=int(index), amount_of_documents=8)
 
     if result_of_db_operation['success'] is True:
         return result_of_db_operation
