@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
@@ -80,17 +81,17 @@
                 </div>
 
                 <div class="col-sm-12 sort tag meta">
-                    <ul>
-                        <li><a href="default.asp">#Liebe</a></li>
-                        <li><a href="news.asp">#Drama</a></li>
-                        <li><a href="contact.asp">#Horror</a></li>
-                        <li><a href="default.asp">#Krimi</a></li>
-                        <li><a href="news.asp">#Scifi</a></li>
-                        <li><a href="contact.asp">#Fantasy</a></li>
-                        <li><a href="default.asp">#Satire</a></li>
-                        <li><a href="news.asp">#Gegenwart</a></li>
-                        <li><a href="contact.asp">#Leben</a></li>
-                        <li><a href="contact.asp">#Sonstiges</a></li>
+                    <ul id="category_selection">
+                        <li id="Liebe"><a href="javascript: apply_filter(0, '#Liebe');">#Liebe</a></li>
+                        <li id="Drama"><a href="javascript: apply_filter(0, '#Drama');">#Drama</a></li>
+                        <li id="Horror"><a href="javascript: apply_filter(0, '#Horror');">#Horror</a></li>
+                        <li id="Krimi"><a href="javascript: apply_filter(0, '#Krimi');">#Krimi</a></li>
+                        <li id="Scifi"><a href="javascript: apply_filter(0, '#Scifi');">#Scifi</a></li>
+                        <li id="Fantasy"><a href="javascript: apply_filter(0, '#Fantasy');">#Fantasy</a></li>
+                        <li id="Satire"><a href="javascript: apply_filter(0, '#Satire');">#Satire</a></li>
+                        <li id="Gegenwart"><a href="javascript: apply_filter(0, '#Gegenwart');">#Gegenwart</a></li>
+                        <li id="Leben"><a href="javascript: apply_filter(0, '#Leben');">#Leben</a></li>
+                        <li id="Sonstiges"><a href="javascript: apply_filter(0, '#Sonstiges');">#Sonstiges</a></li>
                     </ul> 
                 </div>
             </div> 

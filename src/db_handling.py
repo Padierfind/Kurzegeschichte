@@ -80,13 +80,17 @@ class DbHandler:
 
         return {'success': True, 'result': result}
 
-    def read_document_previews(self, db_name: str, collection_name: str, starting_id: int, amount_of_documents: int):
+    def read_document_previews(self, db_name: str, collection_name: str, starting_id: int, amount_of_documents: int,
+                               categories: list):
         print("In Method: read_document_previews()")
-
+        print(categories)
         client, collection = self.open_collection(db_name, collection_name)
 
         try:
-            result = collection.find().sort('{$natural:-1}').limit(amount_of_documents).skip(starting_id)
+            if(len(categories) == 0):
+                result = collection.find().sort('{$natural:-1}').limit(amount_of_documents).skip(starting_id)
+            else:
+                result = collection.find({'categories': {'$in': categories}}).sort('{$natural:-1}').limit(amount_of_documents).skip(starting_id)
             total_length = result.count()
 
             result_as_dict = []

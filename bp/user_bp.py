@@ -72,7 +72,7 @@ def publish_story_and_redirect():
     user_id: str = request.form.get('user_id')
     reading_time: str = request.form.get('reading_time')
     preview_text: str = request.form.get('preview_text')
-    categories: str = request.form.get('selected_categories')
+    categories: str = request.form.getlist('selected_categories')
     timestamp: datetime = request.form.get('timestamp')
 
     test_dict = {
@@ -87,7 +87,7 @@ def publish_story_and_redirect():
     }
 
     handler = DbHandler()
-    db = "test" # Change when production
+    db = "test"  # Change when production
     collection = "previews"
     result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection, json_to_write=test_dict)
 

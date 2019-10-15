@@ -51,11 +51,21 @@ def ajax_get_story_data(story_id):
 def get_story_previews(index):
     print("In Method: get_story_previews()")
 
+    selected_categories = []
+
+    try:
+        categories_in_url = request.args.get('categories')
+        selected_categories = categories_in_url.split(',')
+    except Exception as e:
+        print("No categories in Url specified.")
+
+
     handler = DbHandler()
     db = 'test'  # Change when production
     collection = 'previews'
     result_of_db_operation = handler.read_document_previews(db_name=db, collection_name=collection,
-                                                            starting_id=int(index), amount_of_documents=8)
+                                                            starting_id=int(index), amount_of_documents=8,
+                                                            categories=selected_categories)
 
     if result_of_db_operation['success'] is True:
         return result_of_db_operation

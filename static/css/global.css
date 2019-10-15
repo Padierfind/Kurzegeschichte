@@ -14,15 +14,23 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+a:hover, a:focus{
     color: black;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+ a:visited {
+     text-decoration: none;
 }
 
 h1{
     font-family: 'Playfair Display', serif;
-    font-weight: bold;
     color: black;
     margin: 0;
+    font-weight: bold;
 }
 
 h3{
@@ -97,10 +105,16 @@ li a {
     text-align: justify;
 }
 
+.preview p{
+    min-height: 150px;
+    max-height: 150px;
+
+}
+
 .title{
     font-size: 24px;
     margin-bottom: 0;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Lora', serif;
 }
 
 .readmore{
@@ -155,9 +169,8 @@ li a {
     border-left: none;
 }
 .blockquote p {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Lora', serif;
     font-size: 24px;
-    font-weight: 700px;
     text-align: center;
 }
 
@@ -279,4 +292,8 @@ footer{
 .page_index_container{
     float: right;
     margin-top: 30px;
+}
+
+.selected a{
+    color: black;
 }

@@ -1,16 +1,42 @@
 $( document ).ready(function() {
     var searchParams = new URLSearchParams(window.location.search)
     if(searchParams.has('index')) {
-        ajax_get_story_previews(searchParams.get('index'));
+        ajax_get_story_previews(searchParams.get('index'), "");
     }else{
-        ajax_get_story_previews(0);
+        ajax_get_story_previews(0, "");
     }
 });
 
-function ajax_get_story_previews(index){
+function apply_filter(index, selected_category){
+    $(selected_category).toggleClass("selected");
+    var selected_categories = [];
+
+    var listItems = $("#category_selection li");
+    listItems.each(function(idx, li) {
+        var is_selected = $(li).hasClass("selected");
+        if(is_selected == true){
+            selected_categories.push($(li).attr('id'));
+        }
+    });
+
+    ajax_get_story_previews(index, selected_categories)
+}
+
+function ajax_get_story_previews(index, categories){
     var db_index = index * 8;
+
+    var url_categories = "?categories=" + categories;
+    if(categories == ""){
+        url_categories = "";
+    }
+
+    //Empty Containers
+    $("#preview_container").empty();
+    $("#preview_container_2").empty();
+
+
     $.ajax({
-        url: "/get_story_previews/" + db_index
+        url: "/get_story_previews/" + db_index + url_categories
     }).done(function (result) {
         if(result == "False"){
             display_notification("Wir haben gerade Probleme, die Geschichten aus der " +
