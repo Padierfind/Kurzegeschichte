@@ -1,14 +1,13 @@
-$( document ).ready(function() {
+function get_story_previews_with_index(){
     var searchParams = new URLSearchParams(window.location.search)
     if(searchParams.has('index')) {
         ajax_get_story_previews(searchParams.get('index'), "");
     }else{
         ajax_get_story_previews(0, "");
     }
-});
+}
 
-function apply_filter(index, selected_category){
-    $(selected_category).toggleClass("selected");
+function get_selected_categories(){
     var selected_categories = [];
 
     var listItems = $("#category_selection li");
@@ -19,16 +18,72 @@ function apply_filter(index, selected_category){
         }
     });
 
-    ajax_get_story_previews(index, selected_categories)
+    return selected_categories;
 }
 
-function ajax_get_story_previews(index, categories){
+function get_selected_lengths(){
+    var selected_lengths = [];
+
+    var listItems = $("#length_selection li");
+    listItems.each(function(idx, li) {
+        var is_selected = $(li).hasClass("selected");
+        if(is_selected == true){
+            selected_lengths.push($(li).attr('id'));
+        }
+    });
+
+    return selected_lengths;
+}
+
+function get_selected_sorting(){
+    var selected_sorting = "";
+
+    var listItems = $("#sorting_selection li");
+    listItems.each(function(idx, li) {
+        var is_selected = $(li).hasClass("selected");
+        if(is_selected == true){
+            selected_sorting = $(li).attr('id');
+        }
+    });
+
+    return selected_sorting;
+}
+
+function apply_filter(selected){
+    $(selected).toggleClass("selected");
+    get_story_previews_with_index();
+}
+
+// This function is different is different from the other filters because only one can be selected at a time.
+function apply_filter_sorting(selected){
+    var listItems = $("#sorting_selection li");
+    listItems.each(function(idx, li) {
+        $(li).removeClass("selected");
+    });
+
+    $(selected).addClass("selected");
+    get_story_previews_with_index();
+}
+
+function ajax_get_story_previews(index){
+    var categories = get_selected_categories();
+    var lengths = get_selected_lengths();
+    var sorting = get_selected_sorting();
+
     var db_index = index * 8;
 
-    var url_categories = "?categories=" + categories;
+    var url_categories = "&categories=" + categories;
     if(categories == ""){
         url_categories = "";
     }
+
+    var url_lengths = "&lengths=" + lengths;
+
+    if(lengths == ""){
+        url_lengths = "";
+    }
+
+    var url_sorting = "&sorting=" + sorting;
 
     //Empty Containers
     $("#preview_container").empty();
@@ -36,7 +91,7 @@ function ajax_get_story_previews(index, categories){
 
 
     $.ajax({
-        url: "/get_story_previews/" + db_index + url_categories
+        url: "/get_story_previews/?index=" + db_index + url_categories + url_lengths + url_sorting
     }).done(function (result) {
         if(result == "False"){
             display_notification("Wir haben gerade Probleme, die Geschichten aus der " +
@@ -116,3 +171,7 @@ function ajax_get_story_previews(index, categories){
         });
     });
 }
+
+$( document ).ready(function() {
+    get_story_previews_with_index();
+});

@@ -47,11 +47,14 @@ def ajax_get_story_data(story_id):
         return 'False'
 
 
-@main_bp.route('/get_story_previews/<index>', methods=['GET'])
-def get_story_previews(index):
+@main_bp.route('/get_story_previews/', methods=['GET'])
+def get_story_previews():
     print("In Method: get_story_previews()")
 
+    index = request.args.get('index')
+
     selected_categories = []
+    selected_lengths = []
 
     try:
         categories_in_url = request.args.get('categories')
@@ -59,13 +62,18 @@ def get_story_previews(index):
     except Exception as e:
         print("No categories in Url specified.")
 
+    try:
+        lengths_in_url = request.args.get('lengths')
+        selected_lengths = lengths_in_url.split(',')
+    except Exception as e:
+        print("No lengths in Url specified.")
 
     handler = DbHandler()
     db = 'test'  # Change when production
     collection = 'previews'
     result_of_db_operation = handler.read_document_previews(db_name=db, collection_name=collection,
                                                             starting_id=int(index), amount_of_documents=8,
-                                                            categories=selected_categories)
+                                                            categories=selected_categories, lengths=selected_lengths)
 
     if result_of_db_operation['success'] is True:
         return result_of_db_operation

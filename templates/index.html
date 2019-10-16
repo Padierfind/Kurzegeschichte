@@ -63,39 +63,39 @@
                 </blockquote>
                 <hr>
                 <div class="col-sm-12 sort">
-                    <ul>
-                        <li>Sortiere nach</li>
-                        <li><a href="default.asp">Empfehlungen</a></li>
-                        <li><a href="news.asp">Neuste</a></li>
-                        <li><a href="contact.asp">Beliebt</a></li>
+                    <ul id="sorting_selection">
+                        <li><b>Sortiere nach</b></li>
+                        <li id="recommendations" class="selected"><a href="javascript: apply_filter_sorting('#recommendations');">Empfehlungen</a></li>
+                        <li id="newest"><a href="javascript: apply_filter_sorting('#newest');">Neuste</a></li>
+                        <li id="popular"><a href="javascript: apply_filter_sorting('#popular');">Beliebt</a></li>
                     </ul> 
                 </div>                
                 <div class="col-sm-12 sort">
-                    <ul>
-                        <li>Lesezeit</li>
-                        <li><a href="default.asp"> 5 Minuten</a></li>
-                        <li><a href="news.asp">5-15 Minuten></a></li>
-                        <li><a href="contact.asp">15-45 Minuten</a></li>
-                        <li><a href="default.asp">> 45 Minuten</a></li>
+                    <ul id="length_selection">
+                        <li><b>Lesezeit</b></li>
+                        <li id="veryshort"><a href="javascript: apply_filter('#veryshort');">< 5 Minuten</a></li>
+                        <li id="short"><a href="javascript: apply_filter('#short');">5-15 Minuten</a></li>
+                        <li id="medium"><a href="javascript: apply_filter('#medium');">15-45 Minuten</a></li>
+                        <li id="long"><a href="javascript: apply_filter('#long');">> 45 Minuten</a></li>
                     </ul> 
                 </div>
 
-                <div class="col-sm-12 sort tag meta">
+                <div class="col-sm-12 sort">
                     <ul id="category_selection">
-                        <li id="Liebe"><a href="javascript: apply_filter(0, '#Liebe');">#Liebe</a></li>
-                        <li id="Drama"><a href="javascript: apply_filter(0, '#Drama');">#Drama</a></li>
-                        <li id="Horror"><a href="javascript: apply_filter(0, '#Horror');">#Horror</a></li>
-                        <li id="Krimi"><a href="javascript: apply_filter(0, '#Krimi');">#Krimi</a></li>
-                        <li id="Scifi"><a href="javascript: apply_filter(0, '#Scifi');">#Scifi</a></li>
-                        <li id="Fantasy"><a href="javascript: apply_filter(0, '#Fantasy');">#Fantasy</a></li>
-                        <li id="Satire"><a href="javascript: apply_filter(0, '#Satire');">#Satire</a></li>
-                        <li id="Gegenwart"><a href="javascript: apply_filter(0, '#Gegenwart');">#Gegenwart</a></li>
-                        <li id="Leben"><a href="javascript: apply_filter(0, '#Leben');">#Leben</a></li>
-                        <li id="Sonstiges"><a href="javascript: apply_filter(0, '#Sonstiges');">#Sonstiges</a></li>
+                        <li><b>Kategorien</b></li>
+                        <li id="Love"><a href="javascript: apply_filter('#Love');">#Liebe</a></li>
+                        <li id="Drama"><a href="javascript: apply_filter('#Drama');">#Drama</a></li>
+                        <li id="Horror"><a href="javascript: apply_filter('#Horror');">#Horror</a></li>
+                        <li id="Krimi"><a href="javascript: apply_filter('#Krimi');">#Krimi</a></li>
+                        <li id="Scifi"><a href="javascript: apply_filter('#Scifi');">#Scifi</a></li>
+                        <li id="Fantasy"><a href="javascript: apply_filter('#Fantasy');">#Fantasy</a></li>
+                        <li id="Satire"><a href="javascript: apply_filter('#Satire');">#Satire</a></li>
+                        <li id="Present"><a href="javascript: apply_filter('#Present');">#Gegenwart</a></li>
+                        <li id="Life"><a href="javascript: apply_filter('#Life');">#Leben</a></li>
+                        <li id="Other"><a href="javascript: apply_filter('#Other');">#Sonstiges</a></li>
                     </ul> 
                 </div>
-            </div> 
-
+            </div>
 
         <div class="container max_w">
             <div id="preview_container" class="row">
