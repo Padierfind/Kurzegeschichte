@@ -14,10 +14,16 @@ a{
     text-decoration: none;
 }
 
-a:hover, a:focus{
+a:hover{
     color: black;
     text-decoration: none;
 }
+
+a:focus{
+    color: gray;
+    text-decoration: none;
+}
+
 
 a:active {
     text-decoration: none;
@@ -132,7 +138,10 @@ li a {
 
 .tag{
     display: inline-block;
-    font-style: italic;
+}
+
+.tag a{
+    color: gray;
 }
 
 .author{

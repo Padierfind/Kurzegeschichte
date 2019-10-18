@@ -143,6 +143,13 @@ function ajax_get_story_previews(index){
                 container = "#preview_container_2";
             }
 
+            var tags = "";
+
+            categories.forEach(function(element){
+                var url = "javascript: apply_filter('#" + element + "');"
+                tags += "<div class=\"tag\"><a href='" + url + "'>#" + element + "&nbsp;</a></div>";
+            });
+
             $(container).append(
                 "<div class=\"col-sm-6 preview\">" +
                 "<hr>" +
@@ -156,12 +163,7 @@ function ajax_get_story_previews(index){
                 "</p>" +
                 "" +
                 "<div class=\"col-sm-8 meta\">" +
-                "    <div class=\"tag\">" +
-                "        #Romantik" +
-                "    </div>" +
-                "    <div class=\"tag\">" +
-                "        #Krimi" +
-                "    </div>" +
+                tags +
                 "    <div>" +
                 "        Lesezeit ca. " + reading_time + " Minuten" +
                 "    </div>" +

@@ -70,10 +70,19 @@ def publish_story_and_redirect():
     story_id: str = request.form.get('story_id')
     title: str = request.form.get('title')
     user_id: str = request.form.get('user_id')
-    reading_time: str = request.form.get('reading_time')
+    reading_time: int = request.form.get('reading_time')
     preview_text: str = request.form.get('preview_text')
     categories: str = request.form.getlist('selected_categories')
     timestamp: datetime = request.form.get('timestamp')
+    length: str = 'veryshort'
+
+    if reading_time >= 5:
+        length = 'short'
+        if reading_time > 15:
+            length = 'medium'
+            if reading_time > 45:
+                length = 'long'
+
 
     test_dict = {
         'story_id': story_id,
@@ -83,7 +92,8 @@ def publish_story_and_redirect():
         'user_id': user_id,
         'story_id': story_id,
         'reading_time': reading_time,
-        'categories': categories
+        'categories': categories,
+        'length': length
     }
 
     handler = DbHandler()

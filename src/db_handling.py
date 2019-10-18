@@ -91,7 +91,7 @@ class DbHandler:
                 categories_query = {'categories': {'$in': categories}}
 
             if len(lengths) != 0:
-                lengths_query = {'lengths': {'$in': lengths}}
+                lengths_query = {'length': {'$in': lengths}}
 
             query = {}
 
