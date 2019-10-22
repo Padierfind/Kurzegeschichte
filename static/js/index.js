@@ -1,5 +1,6 @@
 function get_story_previews_with_index(){
-    var searchParams = new URLSearchParams(window.location.search)
+    var searchParams = new URLSearchParams(window.location.search);
+
     if(searchParams.has('index')) {
         ajax_get_story_previews(searchParams.get('index'), "");
     }else{

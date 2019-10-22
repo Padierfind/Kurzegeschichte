@@ -80,8 +80,41 @@ class DbHandler:
 
         return {'success': True, 'result': result}
 
+    def read_multiple_docs_by_param_from_database(self, db_name: str, collection_name: str, doc_value: str,
+                                                  doc_param: str) -> dict:
+        print("In Method: read_one_doc_by_param_from_database()")
+
+        client, collection = self.open_collection(db_name, collection_name)
+
+        dict_to_find = {
+            doc_param: doc_value
+        }
+
+        try:
+            result = collection.find(dict_to_find)
+
+            total_length = result.count()
+
+            result_as_dict = []
+            for x in result:
+                result_as_dict.append(x)
+
+            for obj in result_as_dict:
+                obj['_id'] = str(obj['_id'])
+        except Exception as e:
+            print("Exception Thrown:")
+            print(e)
+
+            client.close()
+
+            return {'success': False}
+
+        client.close()
+
+        return {'success': True, 'result': result_as_dict, 'total_length': total_length}
+
     def read_document_previews(self, db_name: str, collection_name: str, starting_id: int, amount_of_documents: int,
-                               categories: list, lengths: list):
+                               categories: list, lengths: list) -> dict:
         print("In Method: read_document_previews()")
 
         client, collection = self.open_collection(db_name, collection_name)

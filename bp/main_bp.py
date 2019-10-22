@@ -31,6 +31,16 @@ def display_story():
         abort(404)
 
 
+@main_bp.route('/profile', methods=['GET'])
+def display_profile():
+    print("In Method: display_profile()")
+
+    try:
+        return render_template('profile.html')
+    except TemplateNotFound:
+        abort(404)
+
+
 @main_bp.route('/get_story_data/<story_id>', methods=['GET'])
 def ajax_get_story_data(story_id):
     print("In Method: ajax_get_story_data()")
@@ -48,8 +58,8 @@ def ajax_get_story_data(story_id):
 
 
 @main_bp.route('/get_story_previews/', methods=['GET'])
-def get_story_previews():
-    print("In Method: get_story_previews()")
+def async_get_story_previews():
+    print("In Method: async_get_story_previews()")
 
     index = request.args.get('index')
 
@@ -74,6 +84,25 @@ def get_story_previews():
     result_of_db_operation = handler.read_document_previews(db_name=db, collection_name=collection,
                                                             starting_id=int(index), amount_of_documents=8,
                                                             categories=selected_categories, lengths=selected_lengths)
+
+    if result_of_db_operation['success'] is True:
+        return result_of_db_operation
+    else:
+        return 'False'
+
+
+@main_bp.route('/get_user_story_previews/<user_id>', methods=['GET'])
+def async_get_user_story_previews(user_id):
+    print("In Method: async_get_user_story_previews()")
+
+    handler = DbHandler()
+    db = 'test'  # Change when production
+    collection = 'previews'
+
+    param_name = 'user_id'
+
+    result_of_db_operation = handler.read_multiple_docs_by_param_from_database(db_name=db, collection_name=collection,
+                                                                               doc_value=user_id, doc_param=param_name)
 
     if result_of_db_operation['success'] is True:
         return result_of_db_operation
