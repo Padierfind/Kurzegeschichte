@@ -24,7 +24,7 @@ $( document ).ready(function() {
             $("#text-block-1").html(content);
             $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten.")
             $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten.")
-            $("#author").text("Geschrieben von " + user_id + ".")
+            $("#author").html("Geschrieben von <a href=/profile?user=" + user_id + ">" + user_id + ".")
 
         });
     }else {
@@ -32,4 +32,10 @@ $( document ).ready(function() {
             "deiner Kreativität eine neue Geschichte, die diese Seite füllen könnte.");
     }
 
+
+    $("#meta_box_hidden").hide();
 });
+
+function toggleMeta(){
+    $("#meta_box_hidden").toggle('fast');
+}

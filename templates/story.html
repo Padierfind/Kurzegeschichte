@@ -33,17 +33,19 @@
             <div class="container header max_w">
                     <div class="row">
                         <a href="/">
-                            <div class="col-sm-3">
+                            <div class="col-sm-6">
                                 <h1>kurzegeschichte</h1>
-                                <h3>Because stories matter.</h3>
+                                <h3>It only takes a few minutes to escape.</h3>
                             </div>
                         </a>
-                        <div id="menu" class="col-sm-9 menu">
+                        <div id="menu" class="col-sm-6 menu">
                             <ul>
                                 <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
-                                <li><a href="/profile">Profil</a></li>
-                                <li><a href="/settings">Einstellungen</a></li>
-                                <li><a href="/login">Login / Registrierung</a></li>
+                                <div id="menu_expansion">
+                                    <li><a href="/profile?user=user">Profil</a></li>
+                                    <li><a href="/settings">Einstellungen</a></li>
+                                    <li><a href="/login">Login / Registrierung</a></li>
+                                </div>
                             </ul> 
             
                         </div>
@@ -73,11 +75,11 @@
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
                 </div>
-                <div id="meta_box">
-                    Mehr Informationen zu dieser Geschichte
-                </div>
-                <div id="meta_box_hidden">
+                <div id="meta_box" class="col-sm-12 meta_box">
                     <hr>
+                    <a href="javascript:toggleMeta();">Mehr Informationen zu dieser Geschichte</a>
+                </div>
+                <div id="meta_box_hidden" class="col-sm-12 meta_box">
                     Veröffentlicht am 12.04.1998
                     <br>
                     Tags: #Liebe #Drama #Horror

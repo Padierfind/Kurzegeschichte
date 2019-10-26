@@ -1,6 +1,6 @@
 print("In File: bp/main_bp.py")
 
-from flask import Blueprint, render_template, abort, request
+from flask import Blueprint, render_template, abort, request, session, redirect, url_for
 from jinja2 import TemplateNotFound
 import os
 
@@ -34,6 +34,16 @@ def display_story():
 @main_bp.route('/profile', methods=['GET'])
 def display_profile():
     print("In Method: display_profile()")
+
+    user_id = request.args.get('user')
+
+    if user_id == 'user':
+        try:
+            current_user_id = session["user_id"]
+            return redirect(url_for('main_bps.display_profile', user=current_user_id))
+        except Exception as e:
+            print('Not logged in.')
+            print(e)
 
     try:
         return render_template('profile.html')

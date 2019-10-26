@@ -1,10 +1,9 @@
 function toggleMenu(){
-    //$("#menu > ul").children().not("#menu_button").toggle();
     $("#menu_expansion").toggle('slow');
 }
 
 $( document ).ready(function() {
-    $("#menu > ul").children().not("#menu_button").hide();
+    $("#menu_expansion").hide();
 
     var searchParams = new URLSearchParams(window.location.search)
     if(searchParams.has('notification')) {

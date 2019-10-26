@@ -83,3 +83,14 @@
         column-count: 1;
     }
 }
+
+.meta_box{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    color: gray;
+}
+
+.meta_box a{
+    color:gray;
+}

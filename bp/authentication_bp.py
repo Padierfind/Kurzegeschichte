@@ -1,7 +1,7 @@
 print("In File: bp/authentication_bp.py")
 
 import os
-from flask import Blueprint, render_template, abort, request, redirect, url_for
+from flask import Blueprint, render_template, abort, request, redirect, url_for, session
 from jinja2 import TemplateNotFound
 from flask_login import login_user, login_required, logout_user
 
@@ -48,7 +48,6 @@ def register_user():
                                                                                                    'bestätige deine '
                                                                                                    'Registrierung.'))
     else:
-        # TODO ERROR MESSAGE
         return redirect(url_for('authentication_bps.display_login_registration_page', notification='Etwas ist bei deiner'
                                                                                                    ' Registrierung '
                                                                                                    'fehlgeschlagen. '
@@ -66,6 +65,8 @@ def verify_and_login_user():
 
     user = User(email=email, password=password)
     user_from_db = user.check_if_user_exists()
+    user_id: str = user_from_db['result']['name']
+
     if not user_from_db:
         return redirect(url_for('authentication_bps.display_login_registration_page', notification='Bitte registriere '
                                                                                                    'dich zuerst.'))
@@ -73,9 +74,14 @@ def verify_and_login_user():
     is_authenticated = user.check_password(saved_password=user_from_db['result']['password'], input_password=password)
 
     if is_authenticated:
+        print("User is authenticated. Login now.")
         login_user(user)
-        return redirect(url_for('main_bps.display_main_index', notification='Willkommen zurück!'))
+        session['user_id'] = user_id
+
+        return redirect(url_for('main_bps.display_main_index', notification='Willkommen zurück, ' + user_id + '!'))
     else:
+        print("User is NOT authenticated.")
+
         return redirect(url_for('authentication_bps.display_login_registration_page', notification='Etwas stimmt mit '
                                                                                                    'deinem Passwort'
                                                                                                    ' nicht. Bitte '

@@ -144,7 +144,8 @@ li a {
     color: gray;
 }
 
-.author{
+.author a{
+    color: gray;
 }
 
 .full_header{
