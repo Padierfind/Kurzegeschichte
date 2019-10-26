@@ -14,7 +14,6 @@ $( document ).ready(function() {
             return;
         }
 
-            console.log(result);
             title = result['result']['title'];
             content = result['result']['content'];
             timestamp = result['result']['timestamp'];

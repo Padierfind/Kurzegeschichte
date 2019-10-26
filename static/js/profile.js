@@ -19,7 +19,7 @@ function ajax_get_user_story_previews(user_id){
         previews.forEach(function(element) {
 
             let title = element['title'];
-            let id = element['_id'];
+            let story_id = element['story_id'];
             let categories = element['categories'];
             let preview_text = element['preview_text'];
             let timestamp = element['timestamp'];
@@ -39,7 +39,7 @@ function ajax_get_user_story_previews(user_id){
             $(container).append(
                 "<div class=\"col-sm-6 preview\">" +
                 "<hr>" +
-                "<div class=\"title\"><a href='/story?story_id=" + id + "'>" + title +
+                "<div class=\"title\"><a href='/story?story_id=" + story_id + "'>" + title +
                 "</a></div>" +
                 "<div class=\"meta author\">" +
                 "Geschrieben von " + user_id +
@@ -54,7 +54,7 @@ function ajax_get_user_story_previews(user_id){
                 "        Lesezeit ca. " + reading_time + " Minuten" +
                 "    </div>" +
                 "</div>" +
-                "<div class='col-sm-4 readmore'><a href='/story?story_id=" + id + "'>Lesen</a></div>" +
+                "<div class='col-sm-4 readmore'><a href='/story?story_id=" + story_id + "'>Lesen</a></div>" +
                 "</div>" );
         });
     });

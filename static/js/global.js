@@ -1,5 +1,6 @@
 function toggleMenu(){
-    $("#menu > ul").children().not("#menu_button").toggle();
+    //$("#menu > ul").children().not("#menu_button").toggle();
+    $("#menu_expansion").toggle('slow');
 }
 
 $( document ).ready(function() {

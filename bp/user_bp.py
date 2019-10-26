@@ -1,6 +1,7 @@
 print("In File: bp/user_bp.py")
 
 import os
+from math import ceil
 from datetime import datetime
 from flask import Blueprint, render_template, abort, request, url_for, redirect
 from jinja2 import TemplateNotFound
@@ -40,13 +41,14 @@ def save_draft_and_redirect():
     content: str = request.form.get('content')
     timestamp: datetime = datetime.now()
     user_id: int = 1
+    reading_time: int = ceil(len(content) / 1500);
 
     test_dict = {
         'title': title,
         'content': content,
         'timestamp': timestamp,
         'user_id': user_id,
-        'reading_time': round(len(content) / 1500),
+        'reading_time': reading_time,
         'public': False,
         'public_with_link': False
     }
@@ -70,12 +72,13 @@ def publish_story_and_redirect():
     story_id: str = request.form.get('story_id')
     title: str = request.form.get('title')
     user_id: str = request.form.get('user_id')
-    reading_time: int = request.form.get('reading_time')
+    reading_time: int = int(request.form.get('reading_time'))
     preview_text: str = request.form.get('preview_text')
     categories: str = request.form.getlist('selected_categories')
     timestamp: datetime = request.form.get('timestamp')
     length: str = 'veryshort'
-
+    print("XXXX")
+    print(reading_time)
     if reading_time >= 5:
         length = 'short'
         if reading_time > 15:
