@@ -175,6 +175,11 @@ function ajax_get_story_previews(index){
     });
 }
 
+function close_quote(){
+    $("#front_quote").hide();
+    $("#quote_hr").hide();
+}
+
 $( document ).ready(function() {
     get_story_previews_with_index();
 });

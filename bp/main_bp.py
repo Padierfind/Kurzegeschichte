@@ -13,7 +13,7 @@ main_bp = Blueprint('main_bps', __name__, template_folder=template_dir)
 
 @main_bp.route('/', methods=['GET'])
 def display_main_index():
-    print("In Method: display_main_index()")
+    print('In Method: display_main_index()')
     
     try:
         return render_template('index.html')
@@ -23,7 +23,7 @@ def display_main_index():
 
 @main_bp.route('/story', methods=['GET'])
 def display_story():
-    print("In Method: display_story()")
+    print('In Method: display_story()')
 
     try:
         return render_template('story.html')
@@ -33,13 +33,13 @@ def display_story():
 
 @main_bp.route('/profile', methods=['GET'])
 def display_profile():
-    print("In Method: display_profile()")
+    print('In Method: display_profile()')
 
     user_id = request.args.get('user')
 
     if user_id == 'user':
         try:
-            current_user_id = session["user_id"]
+            current_user_id = session['user_id']
             return redirect(url_for('main_bps.display_profile', user=current_user_id))
         except Exception as e:
             print('Not logged in.')
@@ -53,7 +53,7 @@ def display_profile():
 
 @main_bp.route('/get_story_data/<story_id>', methods=['GET'])
 def ajax_get_story_data(story_id):
-    print("In Method: ajax_get_story_data()")
+    print('In Method: ajax_get_story_data()')
 
     handler = DbHandler()
     db = 'test'  # Change when production
@@ -69,7 +69,7 @@ def ajax_get_story_data(story_id):
 
 @main_bp.route('/get_story_previews/', methods=['GET'])
 def async_get_story_previews():
-    print("In Method: async_get_story_previews()")
+    print('In Method: async_get_story_previews()')
 
     index = request.args.get('index')
 
@@ -103,7 +103,7 @@ def async_get_story_previews():
 
 @main_bp.route('/get_user_story_previews/<user_id>', methods=['GET'])
 def async_get_user_story_previews(user_id):
-    print("In Method: async_get_user_story_previews()")
+    print('In Method: async_get_user_story_previews()')
 
     handler = DbHandler()
     db = 'test'  # Change when production
@@ -118,3 +118,23 @@ def async_get_user_story_previews(user_id):
         return result_of_db_operation
     else:
         return 'False'
+
+
+@main_bp.route('/get_login_status', methods=['GET'])
+def async_get_login_status():
+    print('In Method: async_get_login_status()')
+
+    try:
+        current_user_id = session['user_id']
+
+        result_dict = {
+            'logged_in': True,
+            'user_name': current_user_id
+        }
+
+        return result_dict
+    except Exception as e:
+        print('Not logged in.')
+        print(e)
+
+        return False

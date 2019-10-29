@@ -91,11 +91,10 @@ def verify_and_login_user():
 
 @authentication_bp.route("/logout")
 @login_required
-def logout_user():
-    print("In Method: logout_user()")
+def logout_user_endpoint():
+    print("In Method: logout_user_endpoint()")
 
     logout_user()
-    return redirect(url_for('authentication_bps.display_login_registration_page', notification='Du wurdest ausgeloggt. '
-                                                                                               'Wir freuen uns auf '
+    return redirect(url_for('main_bps.display_main_index', notification='Du wurdest ausgeloggt. ''Wir freuen uns auf '
                                                                                                'deinen nächsten '
                                                                                                'Besuch.'))

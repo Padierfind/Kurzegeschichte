@@ -121,7 +121,6 @@ li a {
     font-size: 24px;
     margin-bottom: 0;
     font-family: 'Lora', serif;
-    font-weight: bold;
 }
 
 .readmore{
@@ -185,7 +184,6 @@ li a {
     text-align: center;
 }
 
-
 .blockquote:before {
   position: absolute;
   top: 0;
@@ -199,6 +197,13 @@ li a {
 .quote_author{
     font-size: 20px;
     text-align: center;
+}
+
+.hide_quote_button{
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 
 footer{
@@ -250,6 +255,7 @@ footer{
     display: inline-block;
     margin-top: 70px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .call_to_action_text{

@@ -15,8 +15,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
         <link href="https://cdn.quilljs.com/1.2.2/quill.bubble.css" rel="stylesheet">
@@ -49,9 +48,11 @@
                             <ul>
                                 <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
                                 <div id="menu_expansion">
-                                    <li><a href="/profile?user=user">Profil</a></li>
-                                    <li><a href="/settings">Einstellungen</a></li>
+                                    <li><a href="/profile?user=user">Informationen</a></li>
+                                    <li class="hidden"><a href="/profile?user=user">Profil</a></li>
+                                    <li class="hidden"><a href="/settings">Einstellungen</a></li>
                                     <li><a href="/login">Login / Registrierung</a></li>
+                                    <li class="hidden"><a href="/logout">Logout</a></li>
                                 </div>
                             </ul> 
                         </div>
@@ -76,14 +77,17 @@
         </div>
         <div class="foot container-fluid">
             <div class="container max_w">
-                <div class="col-sm-8">
+                <div class="col-sm-4">
                     <footer>
-                        © 2019 Kurzegeschichte.de. Alle Rechte vorbehalten.
+                        © 2019 Kurzegeschichte.de
                     </footer>
                 </div>
-                <div class="col-sm-4 foot_menu">
+                <div class="col-sm-8 foot_menu">
                     <footer>
-                        <a href="/impressum">Impressum</a> - <a href="/faq">FAQ</a> - <a href="/agb">AGB</a>
+                        <a href="/impressum">Impressum</a> -
+                        <a href="/press">Presse</a> -
+                        <a href="/privacy">Datenschutz</a> -
+                        <a href="/agb">Nutzungsbedingungen</a>
                     </footer>
                 </div>                
             </div>

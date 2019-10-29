@@ -86,7 +86,6 @@ def publish_story_and_redirect():
             if reading_time > 45:
                 length = 'long'
 
-
     test_dict = {
         'story_id': story_id,
         'title': title,
