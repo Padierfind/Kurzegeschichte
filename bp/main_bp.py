@@ -30,12 +30,23 @@ def display_story():
     except TemplateNotFound:
         abort(404)
 
-@main_bp.route('/impressum', methods=['GET'])
-def display_impressum():
-    print('In Method: display_impressum()')
+
+@main_bp.route('/imprint', methods=['GET'])
+def display_imprint():
+    print('In Method: display_imprint()')
 
     try:
-        return render_template('impressum.html')
+        return render_template('imprint.html')
+    except TemplateNotFound:
+        abort(404)
+
+
+@main_bp.route('/privacy', methods=['GET'])
+def display_privacy():
+    print('In Method: display_privacy()')
+
+    try:
+        return render_template('privacy.html')
     except TemplateNotFound:
         abort(404)
 
@@ -61,8 +72,8 @@ def display_profile():
 
 
 @main_bp.route('/get_story_data/<story_id>', methods=['GET'])
-def ajax_get_story_data(story_id):
-    print('In Method: ajax_get_story_data()')
+def async_get_story_data(story_id):
+    print('In Method: async_get_story_data()')
 
     handler = DbHandler()
     db = 'test'  # Change when production
@@ -144,6 +155,5 @@ def async_get_login_status():
         return result_dict
     except Exception as e:
         print('Not logged in.')
-        print(e)
 
-        return False
+        return 'False'
