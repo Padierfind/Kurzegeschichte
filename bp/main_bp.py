@@ -30,6 +30,15 @@ def display_story():
     except TemplateNotFound:
         abort(404)
 
+@main_bp.route('/impressum', methods=['GET'])
+def display_impressum():
+    print('In Method: display_impressum()')
+
+    try:
+        return render_template('impressum.html')
+    except TemplateNotFound:
+        abort(404)
+
 
 @main_bp.route('/profile', methods=['GET'])
 def display_profile():
