@@ -123,6 +123,14 @@ li a {
     font-family: 'Lora', serif;
 }
 
+.title_page{
+    font-size: 36px;
+    margin-bottom: 0;
+    font-family: 'Lora', serif;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
 .readmore{
     text-align:right;
     padding: 0;
@@ -313,4 +321,12 @@ footer{
 
 .selected a{
     color: black;
+}
+
+.smaller{
+    max-width: 800px;
+}
+
+.hr_black{
+    border-top: 1px solid black;
 }
