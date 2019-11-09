@@ -80,6 +80,7 @@
 
 .meta_box{
     color: gray;
+    text-align: right;
 }
 
 .meta_box a{
@@ -100,7 +101,7 @@
 }
 
 .comment{
-    border-style: dashed;
+    border-style: solid;
     border-width: thin;
     padding: 15px;
     margin-top: 20px;
@@ -109,4 +110,26 @@
 .comment_user_name{
     color: gray;
     text-align: right;
+}
+
+.write_comment{
+    border-style: dashed;
+    border-width: thin;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.write_comment textarea{
+    border: none;
+    width: 100%;
+}
+
+.write_comment button{
+    margin-top: 20px;
+}
+
+.three_columns p::first-letter{
+    font-size: 24px;
+    font-family: 'Lora', serif;
 }
