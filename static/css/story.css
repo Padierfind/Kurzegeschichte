@@ -3,12 +3,6 @@
     text-align: justify;
 }
 
-.text_block{
-    text-align: justify;
-    column-count: 2;
-    column-gap: 30px;
-}
-
 .preview_box{
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     padding: 0;
@@ -85,12 +79,34 @@
 }
 
 .meta_box{
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px;
     color: gray;
 }
 
 .meta_box a{
     color:gray;
+}
+
+.comments_title{
+    font-size: 24px;
+    font-family: 'Lora', serif;
+}
+
+.comments_box{
+    margin-top: 20px;
+}
+
+.small_padding{
+    padding-top: 20px;
+}
+
+.comment{
+    border-style: dashed;
+    border-width: thin;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.comment_user_name{
+    color: gray;
+    text-align: right;
 }

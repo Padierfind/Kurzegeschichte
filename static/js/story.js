@@ -23,9 +23,8 @@ $( document ).ready(function() {
             $("#story_title").text(title);
             $("#text-block-1").html(content);
             $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten.")
-            $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten.")
             $("#author").html("Geschrieben von <a href=/profile?user=" + user_id + ">" + user_id + ".")
-
+            //TODO: Meta Informationen darstellen.
         });
     }else {
         display_notification("Leider ist dieses Blatt noch unbeschrieben. Aber vielleicht entspringt ja " +

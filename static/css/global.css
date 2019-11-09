@@ -121,6 +121,7 @@ li a {
     font-size: 24px;
     margin-bottom: 0;
     font-family: 'Lora', serif;
+    text-align: left !important;
 }
 
 .title_page{
@@ -329,4 +330,16 @@ footer{
 
 .hr_black{
     border-top: 1px solid black;
+}
+
+.full_text{
+    padding: 0;
+}
+
+.three_columns{
+    text-align: justify;
+    text-justify: inter-word;
+    column-count: 3;
+    column-gap: 30px;
+
 }
