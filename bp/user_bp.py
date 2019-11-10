@@ -3,7 +3,7 @@ print("In File: bp/user_bp.py")
 import os
 from math import ceil
 from datetime import datetime
-from flask import Blueprint, render_template, abort, request, url_for, redirect
+from flask import Blueprint, render_template, abort, request, url_for, redirect, session
 from jinja2 import TemplateNotFound
 
 from src.db_handling import DbHandler
@@ -40,7 +40,7 @@ def save_draft_and_redirect():
     title: str = request.form.get('title')
     content: str = request.form.get('content')
     timestamp: datetime = datetime.now()
-    user_id: int = 1
+    user_id: str = session['user_id']
     reading_time: int = ceil(len(content) / 1500);
 
     test_dict = {
@@ -77,8 +77,7 @@ def publish_story_and_redirect():
     categories: str = request.form.getlist('selected_categories')
     timestamp: datetime = request.form.get('timestamp')
     length: str = 'veryshort'
-    print("XXXX")
-    print(reading_time)
+
     if reading_time >= 5:
         length = 'short'
         if reading_time > 15:
@@ -108,3 +107,33 @@ def publish_story_and_redirect():
     else:
         return redirect(url_for('user_bps.display_editor', notification='Etwas ist schief gelaufen. Bitte versuche es '
                                                                         'später noch ein Mal.'))
+
+
+@user_bp.route('/publish_comment', methods=['POST'])
+def publish_comment():
+    print('In Method: publish_comment()')
+
+    content: str = request.form.get('content')
+    timestamp: datetime = datetime.now()
+    user_id: str = session['user_id']
+    story_id: str = request.form.get('story_id')
+
+    test_dict = {
+        'content': content,
+        'timestamp': timestamp,
+        'user_id': user_id,
+        'story_id': story_id
+    }
+
+    handler = DbHandler()
+    db = "test"  # Change when production
+    collection = "comments"
+    result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection,
+                                                       json_to_write=test_dict)
+
+    if result_of_db_operation['success'] is True:
+        return redirect(url_for('main_bps.display_story', story_id=story_id))
+    else:
+        return redirect(url_for('main_bps.display_story', story_id=story_id, notification='Etwas ist schief gelaufen. '
+                                                                                          'Bitte versuche es '
+                                                                                          'später noch ein Mal.'))

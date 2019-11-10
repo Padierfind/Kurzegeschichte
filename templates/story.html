@@ -43,7 +43,7 @@
                                     <li><a href="/info">Informationen</a></li>
                                     <li class="hidden"><a href="/profile?user=user">Profil</a></li>
                                     <li class="hidden"><a href="/settings">Einstellungen</a></li>
-                                    <li><a href="/login">Login / Registrierung</a></li>
+                                    <li><a href="/login">Anmeldung</a></li>
                                     <li class="hidden"><a href="/logout">Logout</a></li>
                                 </div>
                             </ul> 
@@ -90,19 +90,18 @@
                         <div id="comments_title" class="comments_title">
                             Kommentare
                         </div>
-                        <div id="write_comment" class="write_comment">
-                            <form id="comment_form" action="/comment" method="post">
-                                <textarea rows="2" name="comment" form="write_comment" placeholder="Teile Gedanken zu dieser Geschichte..."></textarea>
-                                <button type="button" class="submit_button" onclick="PostContentToSaveDraft();">Veröffentlichen</button>
+                        <div id="write_comment" class="write_comment hidden">
+                            <form id="comment_form" action="/publish_comment" method="post">
+                                <textarea id=comment_form" name="content" rows="2" form="comment_form" placeholder="Teile Gedanken zu dieser Geschichte..."></textarea>
+                                <input id="story_id_form" name="story_id" type="text" class="hidden">
+                                <button type="button" class="submit_button" onclick="post_comment();">Veröffentlichen</button>
                             </form>
                         </div>
-                        <div class="comment" class="comment">
-                            <div id="content" class="comment_content">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accus
+                        <div id="call_to_action_comment" class="call_to_action" style="margin-top:20px; margin-bottom: 0;">
+                            <div class="call_to_action_text">
+                                Bitte melde dich an um Kommentare zu schreiben.
                             </div>
-                            <div id="user_name" class="comment_user_name">
-                                - Patrick Tobler, 12.05.2019
-                            </div>
+                            <a href="/login"><button type="button" class="submit_button">Anmeldung</button></a>
                         </div>
                     </div>
                 </div>

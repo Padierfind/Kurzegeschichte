@@ -17,11 +17,9 @@ function check_if_user_is_logged_in(){
         url: "/get_login_status"
         }).done(function (result) {
             if(result == "False"){
-                return;
+                return false;
             }
-
-            $("#menu_expansion > li").toggleClass("hidden");
-
+        $("#menu_expansion > li").toggleClass("hidden");
     });
 }
 

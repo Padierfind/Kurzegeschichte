@@ -35,6 +35,5 @@ function publish_story(){
     $("#story_id").val(story_id);
 
     $("#reading_time_form").val(reading_time);
-    console.log(reading_time);
     form.submit();
 }

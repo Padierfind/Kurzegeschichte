@@ -157,3 +157,22 @@ def async_get_login_status():
         print('Not logged in.')
 
         return 'False'
+
+
+@main_bp.route('/get_comments/<story_id>', methods=['GET'])
+def async_get_comments(story_id):
+    print('In Method: async_get_comments()')
+
+    handler = DbHandler()
+    db = 'test'  # Change when production
+    collection = 'comments'
+
+    param_name = 'story_id'
+
+    result_of_db_operation = handler.read_multiple_docs_by_param_from_database(db_name=db, collection_name=collection,
+                                                                               doc_value=story_id, doc_param=param_name)
+
+    if result_of_db_operation['success'] is True:
+        return result_of_db_operation
+    else:
+        return 'False'
