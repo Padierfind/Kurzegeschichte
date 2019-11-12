@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
     $('#input_field_preview').bind('input propertychange', function () {
 
         $('#preview_text').text(this.value);

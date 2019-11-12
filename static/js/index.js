@@ -172,6 +172,7 @@ function ajax_get_story_previews(index){
                 "<div class='col-sm-4 readmore'><a href='/story?story_id=" + story_id + "'>Lesen</a></div>" +
                 "</div>" );
         });
+        loading_flag = true;
     });
 }
 
@@ -181,5 +182,6 @@ function close_quote(){
 }
 
 $( document ).ready(function() {
+    loop();
     get_story_previews_with_index();
 });

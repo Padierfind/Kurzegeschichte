@@ -1,6 +1,6 @@
 print("In File: bp/main_bp.py")
 
-from flask import Blueprint, render_template, abort, request, session, redirect, url_for
+from flask import Blueprint, render_template, abort, request, session, redirect, url_for, send_file
 from jinja2 import TemplateNotFound
 import os
 
@@ -47,6 +47,16 @@ def display_privacy():
 
     try:
         return render_template('privacy.html')
+    except TemplateNotFound:
+        abort(404)
+
+
+@main_bp.route('/press', methods=['GET'])
+def display_press():
+    print('In Method: display_press()')
+
+    try:
+        return redirect(url_for('static', filename='files/presskit_de.pdf'))
     except TemplateNotFound:
         abort(404)
 
