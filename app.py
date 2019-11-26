@@ -13,7 +13,7 @@ login_manager.init_app(app)
 def load_user(user_id):
     print("In Method: load_user()")
 
-    return User(name=user_id)
+    return User(user_id=user_id)
 
 
 if __name__ == "__main__":

@@ -23,6 +23,16 @@ def display_editor():
         abort(404)
 
 
+@user_bp.route('/settings', methods=['GET'])
+def display_settings():
+    print('In Method: display_settings()')
+
+    try:
+        return render_template('settings.html')
+    except TemplateNotFound:
+        abort(404)
+
+
 @user_bp.route('/view_draft', methods=['GET'])
 def view_draft():
     print('In Method: view_draft()')
@@ -54,7 +64,7 @@ def save_draft_and_redirect():
     }
 
     handler = DbHandler()
-    db = "test" # Change when production
+    db = "test"  # Change when production
     collection = "stories"
     result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection, json_to_write=test_dict)
 

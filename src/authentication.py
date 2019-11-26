@@ -8,11 +8,11 @@ from src.db_handling import DbHandler
 
 class User(UserMixin):
 
-    def __init__(self, name: str = 'not initialized', email: str = 'not initialized',
+    def __init__(self, user_id: str = 'not initialized', email: str = 'not initialized',
                  password: str = 'not initialized'):
         print("In Method: __init__()")
 
-        self.name = name
+        self.user_id = user_id
         self.id = email
         self.password = password
 
@@ -20,7 +20,7 @@ class User(UserMixin):
         print("In Method: sign_up()")
 
         user_dict = {
-            'name': self.name,
+            'user_id': self.user_id,
             'email': self.id,
             'password': generate_password_hash(self.password)
         }

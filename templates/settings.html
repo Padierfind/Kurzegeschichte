@@ -7,14 +7,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
         <script src="{{ url_for('static', filename='js/global.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
 
@@ -57,17 +55,18 @@
             <div class="container max_w">
                 <div class="row>">
                     <div class="col-sm-12">
-                        <div id="story_title" class="title_page">
-                            Profil
+                        <div class="title_page">
+                            Einstellungen
                         </div>
                         <hr class="hr_black">
-
-                        <div id="name" class="name">
-                            Patrick Tobler
-                        </div>
-                        <hr>
-                        <div id="preview_container" class="row">
-                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <form action="/delete_account">
+                            <button type="submit" class="submit_button">Account löschen</button>
+                        </form>
+                    </div>
+                    <div class="col-sm-9">Mit einem Klick auf diesen Button werden all deine Daten von unseren Servern gelöscht.
+                        Inklusive aller Geschichten, die du auf kurzegeschichte veröffentlicht hast.
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ from jinja2 import TemplateNotFound
 from flask_login import login_user, login_required, logout_user
 
 from src.authentication import User
+from src.db_handling import DbHandler
 
 template_dir = os.path.abspath('templates/')
 
@@ -26,11 +27,11 @@ def display_login_registration_page():
 def register_user():
     print("In Method: register_user()")
 
-    name: str = request.form.get('name')
+    user_id: str = request.form.get('name')
     email: str = request.form.get('email')
     password: str = request.form.get('password')
 
-    new_user = User(name=name, email=email, password=password)
+    new_user = User(user_id=user_id, email=email, password=password)
     signup = False
 
     try:
@@ -40,13 +41,9 @@ def register_user():
         print(e)
 
     if signup == True:
-        return redirect(url_for('authentication_bps.display_login_registration_page', notification='Herzlich '
-                                                                                                   'Willkommen!'
-                                                                                                   ' Bitte schau in '
-                                                                                                   'deinem Email '
-                                                                                                   'Postfach nach und '
-                                                                                                   'bestätige deine '
-                                                                                                   'Registrierung.'))
+        return redirect(url_for('main_bps.display_main_index', notification='Herzlich Willkommen! Bitte schau in '
+                                                                            'deinem Email Postfach nach und bestätige '
+                                                                            'deine Registrierung.'))
     else:
         return redirect(url_for('authentication_bps.display_login_registration_page', notification='Etwas ist bei deiner'
                                                                                                    ' Registrierung '
@@ -65,7 +62,7 @@ def verify_and_login_user():
 
     user = User(email=email, password=password)
     user_from_db = user.check_if_user_exists()
-    user_id: str = user_from_db['result']['name']
+    user_id: str = user_from_db['result']['user_id']
 
     if not user_from_db:
         return redirect(url_for('authentication_bps.display_login_registration_page', notification='Bitte registriere '
@@ -87,6 +84,23 @@ def verify_and_login_user():
                                                                                                    ' nicht. Bitte '
                                                                                                    'probiere es '
                                                                                                    'erneut.'))
+
+
+@authentication_bp.route('/delete_account', methods=['GET'])
+@login_required
+def delete_account():
+    print('In Method: delete_account()')
+    handler = DbHandler()
+    db = "test"  # Change when production
+    result_of_db_operation = handler.delete_from_all_collections_by_user_id(db_name=db, user_id=session['user_id'])
+
+    if result_of_db_operation['success'] is True:
+        logout_user()
+        return redirect(url_for('main_bps.display_main_index', notification='Schade, dass du uns verlassen hast. Es ist'
+                                                                            'nie zu spät zurück zu kommen!'))
+    else:
+        return redirect(url_for('user_bps.display_settings', notification='Etwas ist schief gelaufen. Bitte versuche es'
+                                                                          ' später noch ein Mal.'))
 
 
 @authentication_bp.route("/logout")
