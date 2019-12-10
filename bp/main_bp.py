@@ -51,6 +51,15 @@ def display_privacy():
         abort(404)
 
 
+@main_bp.route('/info', methods=['GET'])
+def display_info():
+    print('In Method: display_info()')
+
+    try:
+        return render_template('info.html')
+    except TemplateNotFound:
+        abort(404)
+
 @main_bp.route('/press', methods=['GET'])
 def display_press():
     print('In Method: display_press()')

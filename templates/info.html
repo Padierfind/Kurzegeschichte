@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+        <script src="{{ url_for('static', filename='js/global.js') }}"></script> 
+
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/story.css') }}">
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+
+        <title>Kurzegeschichte.de</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+    </head>
+    
+    <body>
+        <div id="notification" class="notification">
+            Alarm! Please try again.
+        </div>
+
+        <div class="container-fluid full_header">
+            <div class="container header max_w">
+                    <div class="row">
+                        <a href="/">
+                            <div class="col-sm-6">
+                                <h1>kurzegeschichte</h1>
+                                <h3>It only takes a few minutes to escape.</h3>
+                            </div>
+                        </a>
+                        <div id="menu" class="col-sm-6 menu">
+                            <ul>
+                                <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
+                                <div id="menu_expansion">
+                                    <li><a href="/info">Informationen</a></li>
+                                    <li class="hidden"><a href="/profile?user=user">Profil</a></li>
+                                    <li class="hidden"><a href="/settings">Einstellungen</a></li>
+                                    <li><a href="/login">Anmeldung</a></li>
+                                    <li class="hidden"><a href="/logout">Logout</a></li>
+                                </div>
+                            </ul> 
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="container max_w">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="story_title" class="title_page">
+                        Informationen
+                    </div>
+                    <hr class="hr_black">
+                    <div class="three_columns">
+                        Herzlichen Willkommen bei <b>kurzegeschichte</b>.<br><br>
+                        Wir bringen Leser und Autoren zusammen, denn Kurzgeschichten sind es wert entdeckt zu werden. Für viele Menschen stellen Kurzgeschichten den ersten Schritt in die Welt des Autorentums dar. Sie bieten Raum für Experimente, neue Ideen und Gedanken. Sie sind eine der aufregendsten Formen der Geschichtenerzählung und verdienen die Aufmerksamkeit. Auf kurzegeschichte möchten wir diesem Medium gerecht werden und eine Plattform bieten, die den Lesespaß in den Vordergrund rückt. <br><br>
+                        <div class="title">Geschichte</div><br>
+                        Wie ist <b>kurzegeschichte</b> entstanden?<br><br>
+                        Nun... Als begeisterter Kurzgeschichten Leser, war ich schon länger auf der Suche nach einer Plattform um schnell und einfach Kurzgeschichten zu lesen. Nur waren die einzigen Websites, denen ich auf meiner Suche begegnete, Foren, Fanfiction oder wenig anschauliche Web 1.0 Websites, auf denen das Lesen keinen Spaß machte. Dank dieses frustrierenden Erlebnisses entschied ich mich eines Tages kurzerhand ein eigenes Kurzgeschichten Portal zu entwickeln. Dort sollten alle die Möglichkeit haben einfach, schnell und gratis Kurzgeschichten zu lesen. Aber gleichzeitig sollte das Portal auch als Anlaufstelle für (angehende) Autoren dienen und das Schreiben wieder "in" machen.
+                        <br><br>
+                        <div class="title">Zukunft</div><br>
+                        Wo soll <b>kurzegeschichte</b> hin? <br><br>
+                        Die Zukunft der Seite stelle ich als großes gemeinsames Community Projekt vor. Die Community soll die Möglichkeit bekommen, direkten Einfluss auf die nächsten Entwicklungsschritte, Features und Entscheiden zu haben. Im besten Fall soll sie sogar die Möglichkeit haben, direkt an der Entwicklung teilzuhaben, in dem ich das Repository des Projekts veröffentliche und als Open Source Projekt weiter entwickle. Grund warum dies bisher noch nicht geschah sind lediglich Sicherheitsbedenken meinerseits. Da ich kein IT-Sicherheits Experte bin, befürchte ich, dass es potentiellen Angreifern derzeit leicht fallen könnte, Schwachstellen im Source Code zu finden, sollte dieser ihnen direkt vorliegen. In Zukunft ist das Ziel jedoch auf jeden Fall das Repository zu veröffentlichen. Bei der weiteren Entwicklung stehen aus diesem Grund zunächst Community-Features im Vordergrund.<br> Außerdemm möchte ich die Entwicklung so transparent wie möglich gestalten. Kosten, Technologien, Next-Steps und vorallem die Gründe für Schritte sollen öffentlich dokumentiert werden
+                        <br><br>
+                        <div class="title">Über den Entwickler</div><br>
+                        Entwickelt wurde <b>kurzegeschichte</b> von Patrick Tobler. Er ist 21 Jahre alt und studiert Medieninformatik in Stuttgart. Die Seite wird von ihm als Nebenprojekt betrieben und verfolgt zurzeit keinerlei Gewinnabsichten. In seiner Freizeit spielt Patrick gerne Computerspiele, programmiert (z.B. Websites wie diese hier) und liest lange und kurze Bücher. Für mehr Informationen könnt ihr gerne seine <a href="https://www.tobler.io">Website</a>, sein <a href="https://www.linkedin.com/in/patrick-tobler-6593b912b/">LinkedIn Profil</a> oder seinen <a href="https://twitter.com/Padierfind">Twitter Account</a> besuchen.
+                        <br><br>
+                        <div class="title">Technische Daten</div>
+                        <li>
+                            <ul><b>Frontend:</b> HTML, CSS, Javascript (Jquery) und Bootstrap</ul>
+                            <ul><b>Backend:</b> Python, Flask auf einem Azure Server</ul>
+                            <ul><b>Datenbank:</b> MongoDB auf AWS</ul>
+                        </li>
+                        <br><br>
+                        <div class="title">Kontakt</div><br>
+                        Solltest du weitere Fragen, Anregungen oder Vorschläge haben, schreib mir am besten einfach eine Mail an info@kurzegeschichte.de. Ich freue mich über jede Nachricht!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot container-fluid">
+            <div class="container max_w">
+                <div class="col-sm-4">
+                    <footer>
+                        © 2019 Kurzegeschichte.de
+                    </footer>
+                </div>
+                <div class="col-sm-8 foot_menu">
+                    <footer>
+                        <a href="/imprint">Impressum</a> -
+                        <a href="/press">Presse</a> -
+                        <a href="/privacy">Datenschutz</a> -
+                        <a href="/agb">Nutzungsbedingungen</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html> 
