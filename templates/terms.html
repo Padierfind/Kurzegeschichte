@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <title>Kurzegeschichte.de</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="https://cdn.quilljs.com/1.2.2/quill.js"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <script src="{{ url_for('static', filename='js/global.js') }}"></script> 
-        <script src="{{ url_for('static', filename='js/editor.js') }}"></script> 
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
-        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-        <link href="https://cdn.quilljs.com/1.2.2/quill.bubble.css" rel="stylesheet">
-
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/story.css') }}">
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
 
-        <title>Kurzegeschichte.de - Editor</title>
+        <title>Kurzegeschichte.de</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     </head>
+    
     <body>
         <div id="notification" class="notification">
             Alarm! Please try again.
@@ -55,23 +46,32 @@
                                     <li class="hidden"><a href="/logout">Logout</a></li>
                                 </div>
                             </ul> 
+            
                         </div>
                     </div>
                 </div>
             </div>
 
         <div class="container max_w">
-            <div class="row content">
+            <div class="row">
                 <div class="col-sm-12">
-                    <form id="preview_form" action="/save_draft" method="post">
-                        <input id="title" type="text" name="title" class="input_field_title" placeholder="Überschrift">
-                        <input id="content" type="content" name="content" class="hidden">
-                        <hr class="hr_black">
-                        <div class="editor_custom" id="editor" ></div>
-                        <div class="col-sm-12 next_container">
-                            <button type="button" class="submit_button" onclick="PostContentToSaveDraft();">Weiter</button>
-                        </div>
-                    </form>
+                    <div id="story_title" class="title_page">
+                        Datenschutz
+                    </div>
+                    <hr class="hr_black">
+                    <div class="three_columns">
+                        <div class="title">Löschung von Inhalten</div><br>
+                        Kurzgeschichte hält sich das Recht vor Inhalte jederzeit und ohne Vorwarnung von der Seite zu löschen.
+                        <br><br>
+                        <div class="title">Verhaltensregeln</div><br>
+                        Als Nutzer der Seite verpflichten Sie sich dazu, alle geltenden Gesetze ein zu halten. Desweiteren wird auf eine angenehme Umgangsweise mit anderen Nutzern geachtet. Kurzegeschichte hält sich das Recht vor nach eigenem Ermessen Nutzer bei Nichteinhaltung zu sperren oder von der Seite auszuschließen.
+                        <br><br>
+                        <div class="title">Verwantwortung für Inhalte</div><br>
+                        Die von Nutzern hochgeladenen Inhalte repräsentieren niemals die Meinung oder den Willen der Seite oder deren Besitzer. Für hochgeladene Inhalte sind ausdrücklich die jeweiligen Nutzer verantwortlich.
+                        <br><br>
+                        <div class="title">Änderungen oder Beendigung der Dienste</div><br>
+                        Die Seite entwickelt sich fortwährend weiter und es können jederzeit Funktionen hinzugefügt oder gelöscht werden. Außerdem können die Nutzungsbedingungen sich verändern. Nutzer haben jederzeit das Recht alle von Kurzegeschichte gespeicherten Daten zu löschen und somit die Seite komplett zu verlassen.
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,9 +89,9 @@
                         <a href="/privacy">Datenschutz</a> -
                         <a href="/terms">Nutzungsbedingungen</a>
                     </footer>
-                </div>                
+                </div>
             </div>
         </div>
         
     </body>
-</html>
+</html> 
