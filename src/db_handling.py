@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo, MongoClient
 from bson.objectid import ObjectId
 from configs import db_config
 
+
 class DbHandler:
 
     def open_collection(self, db_name: str, collection_name: str):
