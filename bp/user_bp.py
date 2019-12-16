@@ -64,7 +64,7 @@ def save_draft_and_redirect():
     }
 
     handler = DbHandler()
-    db = "test"  # Change when production
+    db = 'production'
     collection = "stories"
     result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection, json_to_write=test_dict)
 
@@ -109,7 +109,7 @@ def publish_story_and_redirect():
     }
 
     handler = DbHandler()
-    db = "test"  # Change when production
+    db = 'production'
     collection = "previews"
     result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection, json_to_write=test_dict)
 
@@ -137,7 +137,7 @@ def publish_comment():
     }
 
     handler = DbHandler()
-    db = "test"  # Change when production
+    db = 'production'
     collection = "comments"
     result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection,
                                                        json_to_write=test_dict)
