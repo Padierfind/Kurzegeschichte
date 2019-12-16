@@ -104,7 +104,8 @@ def publish_story_and_redirect():
         'story_id': story_id,
         'reading_time': reading_time,
         'categories': categories,
-        'length': length
+        'length': length,
+        'classic': False
     }
 
     handler = DbHandler()
