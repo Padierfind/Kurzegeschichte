@@ -5,6 +5,7 @@ from math import ceil
 from datetime import datetime
 from flask import Blueprint, render_template, abort, request, url_for, redirect, session
 from jinja2 import TemplateNotFound
+from flask_login import login_required
 
 from src.db_handling import DbHandler
 
@@ -14,6 +15,7 @@ user_bp = Blueprint('user_bps', __name__, template_folder=template_dir)
 
 
 @user_bp.route('/editor', methods=['GET'])
+@login_required
 def display_editor():
     print('In Method: display_editor()')
 
@@ -24,6 +26,7 @@ def display_editor():
 
 
 @user_bp.route('/settings', methods=['GET'])
+@login_required
 def display_settings():
     print('In Method: display_settings()')
 
@@ -34,6 +37,7 @@ def display_settings():
 
 
 @user_bp.route('/view_draft', methods=['GET'])
+@login_required
 def view_draft():
     print('In Method: view_draft()')
 
@@ -44,6 +48,7 @@ def view_draft():
 
 
 @user_bp.route('/save_draft', methods=['POST'])
+@login_required
 def save_draft_and_redirect():
     print('In Method: save_draft_and_redirect()')
 
@@ -76,6 +81,7 @@ def save_draft_and_redirect():
 
 
 @user_bp.route('/publish_story', methods=['POST'])
+@login_required
 def publish_story_and_redirect():
     print('In Method: publish_story_and_redirect()')
 
@@ -121,6 +127,7 @@ def publish_story_and_redirect():
 
 
 @user_bp.route('/publish_comment', methods=['POST'])
+@login_required
 def publish_comment():
     print('In Method: publish_comment()')
 

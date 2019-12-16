@@ -2,6 +2,8 @@ print('In File: src/mdb_handling.py')
 
 from flask_pymongo import PyMongo, MongoClient
 from bson.objectid import ObjectId
+from flask_login import login_required
+
 from configs import db_config
 
 
@@ -53,6 +55,7 @@ class DbHandler:
 
         return {'success': True, 'result': result}
 
+    @login_required
     def delete_from_all_collections_by_user_id(self, db_name: str, user_id: str) -> dict:
         print('In Method: delete_by_user_id()')
 
