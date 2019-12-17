@@ -110,12 +110,11 @@ li a {
 .preview{
     margin-top: 20px;
     text-align: justify;
+    min-height: 300px;
 }
 
 .preview p{
     min-height: 100px;
-    max-height: 100px;
-
 }
 
 .title{
@@ -135,8 +134,11 @@ li a {
 
 .readmore{
     text-align:right;
-    padding: 0;
     color: gray;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 5px;
 }
 
 .meta{
@@ -144,6 +146,8 @@ li a {
     margin-bottom: 5px;
     color: gray;
     padding:0;
+    position: absolute;
+    bottom: 0;
 }
 
 .tag{
@@ -154,7 +158,14 @@ li a {
     color: gray;
 }
 
-.author a{
+.meta_author{
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: gray;
+    padding:0;
+}
+
+.meta_author a{
     color: gray;
 }
 
