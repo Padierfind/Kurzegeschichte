@@ -60,6 +60,7 @@
                                 <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
                                 <div id="menu_expansion">
                                     <li><a href="/info">Informationen</a></li>
+                                    <li class="hidden"><a href="/editor">Schreiben</a></li>
                                     <li class="hidden"><a href="/profile?user=user">Profil</a></li>
                                     <li class="hidden"><a href="/settings">Einstellungen</a></li>
                                     <li><a href="/login">Anmeldung</a></li>
@@ -75,7 +76,7 @@
             <div class="row content">
                 <div class="col-sm-12">
                     <form id="preview_form" action="/save_draft" method="post">
-                        <input id="title" type="text" name="title" class="input_field_title" placeholder="Überschrift">
+                        <input id="title" type="text" name="title" class="input_field_title" maxlength="80" placeholder="Überschrift">
                         <input id="content" type="content" name="content" class="hidden">
                         <hr class="hr_black">
                         <div class="editor_custom" id="editor" ></div>
