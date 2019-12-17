@@ -64,8 +64,8 @@ def save_draft_and_redirect():
         'timestamp': timestamp,
         'user_id': user_id,
         'reading_time': reading_time,
-        'public': False,
-        'public_with_link': False
+        'public': True,
+        'public_with_link': True
     }
 
     handler = DbHandler()

@@ -129,7 +129,7 @@
     margin-top: 20px;
 }
 
-.three_columns p::first-letter{
+p:first-child::first-letter{
     font-size: 24px;
     font-family: 'Lora', serif;
 }
