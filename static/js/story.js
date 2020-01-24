@@ -1,4 +1,4 @@
-var title, content, story_id, timestamp, user_id, reading_time;
+var title, content, story_id, timestamp, user_id, reading_time, length, tags;
 
 function disable_call_to_action(){
         $.ajax({
@@ -74,6 +74,11 @@ function load_comments(story_id){
     });
 }
 
+function countWords(txt) {
+    console.log(txt);
+    return txt.trim().split(/\s+/).length;
+}
+
 function load_story_data(){
     $.ajax({
         url: "/get_story_data/" + story_id
@@ -84,17 +89,22 @@ function load_story_data(){
         return;
     }
 
-        title = result['result']['title'];
-        content = result['result']['content'];
-        timestamp = result['result']['timestamp'];
-        user_id = result['result']['user_id'];
-        reading_time = result['result']['reading_time'];
+        title = result['title'];
+        content = result['content'];
+        timestamp = result['timestamp'];
+        user_id = result['user_id'];
+        reading_time = result['reading_time'];
+        console.log(content);
+        length = countWords(content);
+        tags = result['categories'];
 
         $("#story_title").text(title);
         $("#text-block-1").html(content);
-        $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten.")
+        $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten")
         $("#author").html("Geschrieben von <a href=/profile?user=" + user_id + ">" + user_id + ".")
-        //TODO: Meta Informationen darstellen.
+        $("#timestamp").text("Veröffentlicht am " + timestamp);
+        $("#tags").text("Tags: " + tags);
+        $("#length").text("Länge: " + length + " Wörter");
     });
 }
 
