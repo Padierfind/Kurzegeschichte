@@ -157,7 +157,7 @@ function ajax_get_story_previews(index){
                 "<div class=\"title\"><a href='/story?story_id=" + story_id + "'>" + title +
                 "</a></div>" +
                 "<div class=\"meta_author\">" +
-                "Geschrieben von <a href=/profile?user=" + user_id + ">" + user_id +
+                "Geschrieben von <a href=/profile?user=" + user_id.replace(" ", "%20") + ">" + user_id +
                 "</a></div>    " +
                 "<p>" +
                     preview_text +

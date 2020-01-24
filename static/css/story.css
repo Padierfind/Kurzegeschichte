@@ -73,8 +73,21 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .text_block{
+    .three_columns{
         column-count: 1;
+    }
+}
+
+ @media only screen and (min-width: 768px) {
+    .three_columns{
+        column-count: 2;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .three_columns{
+        column-count: 3;
     }
 }
 
