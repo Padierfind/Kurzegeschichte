@@ -107,11 +107,21 @@ def async_get_story_data(story_id):
     handler = DbHandler()
     db = 'production'
     collection = 'stories'
-    result_of_db_operation = handler.read_one_doc_by_id_from_database(db_name=db, collection_name=collection,
-                                                                      doc_id=story_id)
+    result_of_db_operation_story = handler.read_one_doc_by_id_from_database(db_name=db, collection_name=collection,
+                                                                            doc_id=story_id)
 
-    if result_of_db_operation['success'] is True:
-        return result_of_db_operation
+    collection = 'previews'
+    param_name = 'story_id'
+    result_of_db_operation_preview = handler.read_one_doc_by_param_from_database(db_name=db, collection_name=collection,
+                                                                                 doc_value=story_id,
+                                                                                 doc_param=param_name)
+
+    if result_of_db_operation_story['success'] is True & result_of_db_operation_preview['success'] is True:
+
+        result = result_of_db_operation_preview['result']
+        result.update(result_of_db_operation_story['result'])
+
+        return result
     else:
         return 'False'
 
