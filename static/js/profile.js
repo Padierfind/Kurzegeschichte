@@ -62,6 +62,7 @@ function ajax_get_user_story_previews(user_id){
 }
 
 $( document ).ready(function() {
+    loop();
     var searchParams = new URLSearchParams(window.location.search);
 
     if(searchParams.has('user')) {
