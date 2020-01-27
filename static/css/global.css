@@ -97,12 +97,6 @@ li a {
     margin-top: 50px;
 }
 
-@media only screen and (max-width: 768px) {
-    .menu{
-        margin-top: 0px;
-    }
-}
-
 .menu li{
     padding: 0;
 }
@@ -415,4 +409,14 @@ footer{
 .ml6 .letter {
   display: inline-block;
   line-height: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu{
+        margin-top: 10px;
+    }
+
+    .preview{
+        min-height: 320px;
+    }
 }
