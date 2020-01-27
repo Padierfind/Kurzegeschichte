@@ -1,31 +1,6 @@
-var loading_flag = false;
-
-async function loop() {
-    var s = '',
-        p;
-
-    p = Math.floor(((Math.sin(Date.now()/300)+1)/2) * 100);
-
-    while (p >= 8) {
-        s += '█';
-        p -= 8;
-    }
-    s += ['⠀','▏','▎','▍','▌','▋','▊','▉'][p];
-
-    location.hash = s;
-    if(loading_flag == true){
-        location.hash = "";
-    }
-    else{
-        setTimeout(loop, 50);
-    }
-}
-
-
 function toggleMenu(){
     $("#menu_expansion").toggle('slow');
 }
-
 
 function display_notification(notification_text){
     $("#notification").text(notification_text);

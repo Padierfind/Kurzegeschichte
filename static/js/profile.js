@@ -41,9 +41,9 @@ function ajax_get_user_story_previews(user_id){
                 "<hr>" +
                 "<div class=\"title\"><a href='/story?story_id=" + story_id + "'>" + title +
                 "</a></div>" +
-                "<div class=\"meta author\">" +
-                "Geschrieben von " + user_id +
-                "</div>    " +
+                "<div class=\"meta_author\">" +
+                "Geschrieben von <a href=/profile?user=" + user_id.replace(" ", "%20") + ">" + user_id +
+                "</a></div>    " +
                 "<p>" +
                     preview_text +
                 "</p>" +
@@ -57,10 +57,12 @@ function ajax_get_user_story_previews(user_id){
                 "<div class='col-sm-4 readmore'><a href='/story?story_id=" + story_id + "'>Lesen</a></div>" +
                 "</div>" );
         });
+        loading_flag = true;
     });
 }
 
 $( document ).ready(function() {
+    loop();
     var searchParams = new URLSearchParams(window.location.search);
 
     if(searchParams.has('user')) {

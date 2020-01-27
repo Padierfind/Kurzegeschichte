@@ -16,6 +16,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
         <script src="{{ url_for('static', filename='js/global.js') }}"></script>
         <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
@@ -37,6 +38,14 @@
     <body>
         <div id="notification" class="notification">
             Alarm! Please try again.
+        </div>
+
+        <div id="cssload-container" class="cssload-container">
+            <div class="ml6">
+              <span class="text-wrapper">
+                <span class="letters">Lädt...</span>
+              </span>
+            </div>
         </div>
 
         <div class="container-fluid full_header">
@@ -102,4 +111,7 @@
                 </div>
         </div>
     </body>
+
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+
 </html>
