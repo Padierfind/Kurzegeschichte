@@ -411,12 +411,30 @@ footer{
   line-height: 1em;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 705px) and (min-width: 341px) {
     .menu{
         margin-top: 10px;
     }
-
     .preview{
         min-height: 320px;
+    }
+}
+
+@media only screen and (max-width: 960px) and (min-width: 706px) {
+    .menu{
+        margin-top: 10px;
+    }
+    .preview{
+        min-height: 340px;
+    }
+}
+
+
+@media only screen and (max-width: 340px) {
+    .menu{
+        margin-top: 10px;
+    }
+    .preview{
+        min-height: 340px;
     }
 }
