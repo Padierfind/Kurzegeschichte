@@ -430,11 +430,20 @@ footer{
 }
 
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 340px) and (min-width: 310px) {
     .menu{
         margin-top: 10px;
     }
     .preview{
         min-height: 340px;
+    }
+}
+
+@media only screen and (max-width: 339px){
+    .menu{
+        margin-top: 10px;
+    }
+    .preview{
+        min-height: 360px;
     }
 }
