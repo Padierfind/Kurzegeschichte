@@ -227,11 +227,11 @@ li a {
 .blockquote:before {
   position: absolute;
   top: 0;
-  
+
   content:"\"";
   font-size: 200px;
   color: rgba(0,0,0,0.1);
-   
+
 }
 
 .quote_author{
