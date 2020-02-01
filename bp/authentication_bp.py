@@ -93,7 +93,7 @@ def verify_and_login_user():
 def delete_account():
     print('In Method: delete_account()')
     handler = DbHandler()
-    db = 'production'
+    db = 'test' # change for production
     result_of_db_operation = handler.delete_from_all_collections_by_user_id(db_name=db, user_id=session['user_id'])
 
     if result_of_db_operation['success'] is True:

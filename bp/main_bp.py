@@ -106,7 +106,7 @@ def async_get_story_data(story_id):
     print('In Method: async_get_story_data()')
 
     handler = DbHandler()
-    db = 'production'
+    db = 'test' # change for production
     collection = 'stories'
     result_of_db_operation_story = handler.read_one_doc_by_id_from_database(db_name=db, collection_name=collection,
                                                                             doc_id=story_id)
@@ -149,7 +149,7 @@ def async_get_story_previews():
         print("No lengths in Url specified.")
 
     handler = DbHandler()
-    db = 'production'
+    db = 'test' # change for production
     collection = 'previews'
     result_of_db_operation = handler.read_document_previews(db_name=db, collection_name=collection,
                                                             starting_id=int(index), amount_of_documents=8,
@@ -166,7 +166,7 @@ def async_get_user_story_previews(user_id):
     print('In Method: async_get_user_story_previews()')
 
     handler = DbHandler()
-    db = 'production'
+    db = 'test' # change for production
     collection = 'previews'
 
     param_name = 'user_id'
@@ -204,7 +204,7 @@ def async_get_comments(story_id):
     print('In Method: async_get_comments()')
 
     handler = DbHandler()
-    db = 'production'
+    db = 'test' # change for production
     collection = 'comments'
 
     param_name = 'story_id'
