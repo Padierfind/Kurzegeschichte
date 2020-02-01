@@ -94,7 +94,7 @@ celerybeat-schedule
 # mypy
 .mypy_cache/
 
-# configs
+# config
 
 /configs
 

@@ -27,7 +27,6 @@ def handle_unauthorized_access():
 
 if __name__ == "__main__":
     print("Is __main__")
-
     try:
         app.run(host='127.0.0.1', port=5000)
     except OSError as e:

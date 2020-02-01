@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+	<head>
+		<title>                  </title>
+		<!--[if !mso]><!-- -->        
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--<![endif]-->        
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">          #outlook a { padding:0; }          .ReadMsgBody { width:100%; }          .ExternalClass { width:100%; }          .ExternalClass * { line-height:100%; }          body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }          table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }          img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }          p { display:block;margin:13px 0; }        </style>
+		<!--[if !mso]><!-->        
+		<style type="text/css">          @media only screen and (max-width:480px) {            @-ms-viewport { width:320px; }            @viewport { width:320px; }          }        </style>
+		<!--<![endif]-->        <!--[if mso]>        
+		<xml>
+			<o:OfficeDocumentSettings>
+				<o:AllowPNG/>
+				<o:PixelsPerInch>96</o:PixelsPerInch>
+			</o:OfficeDocumentSettings>
+		</xml>
+		<![endif]-->        <!--[if lte mso 11]>        
+		<style type="text/css">          .outlook-group-fix { width:100% !important; }        </style>
+		<![endif]-->              <!--[if !mso]><!-->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+            @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+        </style>
+		<!--<![endif]-->                
+		<style type="text/css">      @media only screen and (min-width:480px) {        .mj-column-per-100 { width:100% !important; max-width: 100%; }      }    </style>
+		<style type="text/css">                        </style>
+		<style type="text/css">.hide_on_mobile { display: none !important;}         @media only screen and (min-width: 480px) { .hide_on_mobile { display: block !important;} }        [owa] .mj-column-per-100 {            width: 100%!important;          }          [owa] .mj-column-per-50 {            width: 50%!important;          }          [owa] .mj-column-per-33 {            width: 33.333333333333336%!important;          }          p {              margin: 0px;          }</style>
+	</head>
+	<body style="background-color:#FFFFFF;">
+		<div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">      Best&#xE4;tige deine Registrierung bei kurzegeschichte    </div>
+		<div style="background-color:#FFFFFF;">
+			<!--[if mso | IE]>      
+			<table         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"      >
+				<tr>
+					<td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+						<![endif]-->                
+						<div style="Margin:0px auto;max-width:600px;">
+							<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+								<tbody>
+									<tr>
+										<td style="direction:ltr;font-size:0px;padding:39px 0px 39px 0px;text-align:center;vertical-align:top;">
+											<!--[if mso | IE]>                  
+											<table role="presentation" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td               class="" style="vertical-align:top;width:600px;"            >
+														<![endif]-->                  
+														<div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+															<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+																<tbody>
+																	<tr>
+																		<td align="left" style="font-size:0px;padding:15px 15px 0px 15px;word-break:break-word;">
+																			<div style="font-family: 'Playfair Display', serif;font-size:11px;line-height:1.5;text-align:left;color:#000000;">
+																				<p><strong><span style="font-size:36px;">kurzegeschichte</span></strong></p>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align="left" style="font-size:0px;padding:0px 15px 0px 15px;word-break:break-word;">
+																			<div style="font-family: 'Source Sans Pro', sans-serif;font-size:11px;line-height:1.5;text-align:left;color:#000000;">
+																				<p><span style="color:#777777;"><span style="font-size:20px;">It only takes a few minutes to escape.</span></span></p>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td style="font-size:0px;padding:15px;padding-top:10px;padding-right:10px;word-break:break-word;">
+																			<p style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:100%;">      </p>
+																			<!--[if mso | IE]>        
+																			<table           align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:565px;" role="presentation" width="565px"        >
+																				<tr>
+																					<td style="height:0;line-height:0;">              &nbsp;            </td>
+																				</tr>
+																			</table>
+																			<![endif]-->                      
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align="left" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
+																			<div style="font-family: 'Source Sans Pro', sans-serif;font-size:11px;line-height:1.5;text-align:left;color:#000000;">
+																				<p><span style="font-size:16px;">Hallo ${PERSON_NAME}! Danke f&#xFC;r Deine Registrierung!</span></p>
+																				<p><span style="font-size:16px;">Wir freuen uns dich bei kurzegeschichte willkommen hei&#xDF;en zu k&#xF6;nnen.</span></p>
+																				<p></p>
+																				<p><span style="font-size:16px;">Bitte klicke auf den unten klickenden Link um deine Registrierung zu best&#xE4;tigen.</span></p>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align="center" vertical-align="middle" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
+																			<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:100%;line-height:100%;">
+																				<tbody>
+																					<tr>
+																						<td align="center" bgcolor="#000000" role="presentation" style="border:0px solid #000;border-radius:0px;cursor:auto;mso-padding-alt:14px 0px 14px 0px;background:#000000;" valign="middle">            <a href="https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}" style="display:inline-block;background:#000000;color:#ffffff;font-family: 'Source Sans Pro', sans-serif;font-size:20px;font-weight:normal;line-height:100%;Margin:0;text-decoration:none;text-transform:none;padding:14px 0px 14px 0px;mso-padding-alt:0px;border-radius:0px;" target="_blank">              Registrierung best&#xE4;tigen            </a>          </td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align="left" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
+																			<div style="font-family: 'Source Sans Pro', sans-serif;font-size:11px;line-height:1.5;text-align:left;color:#000000;">
+																				<p>Sollte der Link aus irgend einem Grund nicht funktionieren kopiere folgende Addresse in die Address-Leiste deines Browsers: <a style="color:black" href="https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}">https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}</a></p>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td style="font-size:0px;padding:15px;padding-top:10px;padding-right:10px;word-break:break-word;">
+																			<p style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:100%;">      </p>
+																			<!--[if mso | IE]>        
+																			<table           align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:565px;" role="presentation" width="565px"        >
+																				<tr>
+																					<td style="height:0;line-height:0;">              &nbsp;            </td>
+																				</tr>
+																			</table>
+																			<![endif]-->                      
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align="center" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
+																			<div style="font-family: 'Source Sans Pro', sans-serif;font-size:11px;line-height:1.5;text-align:center;color:#000000;">
+																				<p>Autogenerierte Email von kurzegeschichte</p>
+																				<p></p>
+																				<p>Ansprechpartner: Patrick Tobler</p>
+																				<p>Email: info@kurzegeschichte.de</p>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<!--[if mso | IE]>            
+													</td>
+												</tr>
+											</table>
+											<![endif]-->              
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--[if mso | IE]>          
+					</td>
+				</tr>
+			</table>
+			<![endif]-->              
+		</div>
+	</body>
+</html>

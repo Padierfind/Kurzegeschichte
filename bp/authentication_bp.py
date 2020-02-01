@@ -7,6 +7,7 @@ from flask_login import login_user, login_required, logout_user
 
 from src.authentication import User
 from src.db_handling import DbHandler
+from src.mail_handling import mail_handling
 
 template_dir = os.path.abspath('templates/')
 
@@ -36,6 +37,7 @@ def register_user():
 
     try:
         signup = new_user.sign_up()
+        mail = mail_handling.send_confirmation_mail(name=user_id, email=email)
     except Exception as e:
         print("Something went wrong:")
         print(e)

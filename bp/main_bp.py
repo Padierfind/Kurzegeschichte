@@ -70,6 +70,7 @@ def display_info():
     except TemplateNotFound:
         abort(404)
 
+
 @main_bp.route('/press', methods=['GET'])
 def display_press():
     print('In Method: display_press()')
