@@ -27,7 +27,7 @@ class User(UserMixin):
         }
 
         handler = DbHandler()
-        db = 'test' # change for production
+        db = 'production'
         collection = "users"
         result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection,
                                                            json_to_write=user_dict)
@@ -41,7 +41,7 @@ class User(UserMixin):
         print("In Method: check_if_user_exists()")
 
         handler = DbHandler()
-        db = 'test' # change for production
+        db = 'production'
         collection = 'users'
         result_of_db_operation = handler.read_one_doc_by_param_from_database(db_name=db, collection_name=collection,
                                                                              doc_value=self.id, doc_param='email')

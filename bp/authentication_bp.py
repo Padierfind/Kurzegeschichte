@@ -98,7 +98,7 @@ def confirm_mail():
     user_id = request.args.get('user_id')
 
     handler = DbHandler()
-    db = 'test' # change for production
+    db = 'production'
     collection = 'users'
 
     param_name_find = 'user_id'
@@ -122,7 +122,7 @@ def confirm_mail():
 def delete_account():
     print('In Method: delete_account()')
     handler = DbHandler()
-    db = 'test' # change for production
+    db = 'production'
     result_of_db_operation = handler.delete_from_all_collections_by_user_id(db_name=db, user_id=session['user_id'])
 
     if result_of_db_operation['success'] is True:
