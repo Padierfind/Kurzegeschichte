@@ -101,7 +101,7 @@ function load_story_data(){
         $("#story_title").text(title);
         $("#text-block-1").html(content);
         $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten")
-        $("#author").html("Geschrieben von <a href=/profile?user=" + user_id + ">" + user_id + ".")
+        $("#author").html("Geschrieben von <a href=/profile?user=" + user_id.split(" ").join("%20") + ">" + user_id + ".")
         $("#timestamp").text("Veröffentlicht am " + timestamp);
         $("#tags").text("Tags: " + tags);
         $("#length").text("Länge: " + length + " Wörter");
