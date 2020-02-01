@@ -31,4 +31,15 @@ $( document ).ready(function() {
     }
 
     check_if_user_is_logged_in();
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            $("#header").css("opacity", "100");
+        } else {
+            $("#header").css("opacity", "0");
+        }
+        prevScrollpos = currentScrollPos;
+    }
 });
