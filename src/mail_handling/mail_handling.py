@@ -22,7 +22,6 @@ def read_template(filename):
 
 def send_confirmation_mail(name: str, email: str):
     print('In Method: send_mail()')
-
     message_template = read_template('templates/emails/confirmation_mail.txt')
 
     try:
@@ -30,7 +29,11 @@ def send_confirmation_mail(name: str, email: str):
         s = smtplib.SMTP(host='mail.privateemail.com', port=587)
         s.starttls()
         s.login(mail_config.address, mail_config.password)
+    except smtplib.SMTPException as e:
+        print(e)
+        return False
 
+    try:
         # For each contact, send the email:
         msg = MIMEMultipart()  # create a message
 
@@ -51,7 +54,9 @@ def send_confirmation_mail(name: str, email: str):
 
         # Terminate the SMTP session and close the connection
         s.quit()
-    except smtplib.SMTPException as e:
+    except Exception as e:
+        s.quit()
         print(e)
+        return False
 
     return True

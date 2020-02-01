@@ -33,16 +33,19 @@ def register_user():
     password: str = request.form.get('password')
 
     new_user = User(user_id=user_id, email=email, password=password)
-    signup = False
+    user_signed_up = False
 
     try:
-        signup = new_user.sign_up()
-        mail = mail_handling.send_confirmation_mail(name=user_id, email=email)
+        user_signed_up = new_user.sign_up()
     except Exception as e:
-        print("Something went wrong:")
         print(e)
 
-    if signup == True:
+    try:
+        confirmation_mail_sent = mail_handling.send_confirmation_mail(name=user_id, email=email)
+    except Exception as e:
+        print(e)
+
+    if (user_signed_up == True) and (confirmation_mail_sent == True):
         return redirect(url_for('main_bps.display_main_index', notification='Herzlich Willkommen! Bitte schau in '
                                                                             'deinem Email Postfach nach und bestätige '
                                                                             'deine Registrierung.'))
@@ -86,6 +89,32 @@ def verify_and_login_user():
                                                                                                    ' nicht. Bitte '
                                                                                                    'probiere es '
                                                                                                    'erneut.'))
+
+
+@authentication_bp.route('/confirm_registration', methods=['GET'])
+def confirm_mail():
+    print("In Method: confirm_mail()")
+
+    user_id = request.args.get('user_id')
+
+    handler = DbHandler()
+    db = 'test' # change for production
+    collection = 'users'
+
+    param_name_find = 'user_id'
+
+    param_name_new = 'mail_confirmed'
+    result_of_db_operation = handler.update_one_doc_by_param_from_database(db_name=db, collection_name=collection,
+                                                                                 doc_value_find=user_id,
+                                                                                 doc_param_find=param_name_find,
+                                                                                 doc_value_new=True,
+                                                                                 doc_param_new=param_name_new)
+
+    if result_of_db_operation['success'] is True:
+        return redirect(url_for('main_bps.display_main_index', notification='Dein Profil ist jetzt bestätigt.'))
+    else:
+        return redirect(url_for('main_bps.display_main_index', notification='Etwas ist schief gelaufen. Bitte versuche es '
+                                                                        'später noch ein Mal.'))
 
 
 @authentication_bp.route('/delete_account', methods=['GET'])

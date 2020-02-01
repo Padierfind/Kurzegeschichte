@@ -22,7 +22,8 @@ class User(UserMixin):
         user_dict = {
             'user_id': self.user_id,
             'email': self.id,
-            'password': generate_password_hash(self.password)
+            'password': generate_password_hash(self.password),
+            'mail_confirmed': False
         }
 
         handler = DbHandler()

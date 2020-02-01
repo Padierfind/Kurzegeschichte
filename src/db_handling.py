@@ -180,3 +180,34 @@ class DbHandler:
         client.close()
 
         return {'success': True, 'result': result_as_dict, 'total_length': total_length}
+
+    def update_one_doc_by_param_from_database(self, db_name: str, collection_name: str,
+                                            doc_value_find: str, doc_param_find: str, doc_value_new: str,
+                                            doc_param_new: str) -> dict:
+        print('In Method: read_one_doc_by_param_from_database()')
+
+        client, collection = self.open_collection(db_name, collection_name)
+
+        dict_to_find = {
+            doc_param_find: doc_value_find
+        }
+
+        dict_new_values = {
+            '$set': {
+                doc_param_new: doc_value_new
+            }
+        }
+
+        try:
+            collection.update_one(dict_to_find, dict_new_values)
+        except Exception as e:
+            print('Exception Thrown:')
+            print(e)
+
+            client.close()
+
+            return {'success': False}
+
+        client.close()
+
+        return {'success': True}
