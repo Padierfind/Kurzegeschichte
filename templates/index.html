@@ -30,9 +30,24 @@
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
 
-        <title>Kurzegeschichte.de</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kurzegeschichte</title>        
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="Gratis Kurzgeschichten lesen! Und schreiben.">ä
+        <meta name="keywords" content="Kurzgeschichte, Shortstory, lesen, schreiben, Buch, Geschichte">
+
+        <meta property="og:title" content="Kurzegeschichte - It only takes a few words to escape." />
+        <meta property="og:site_name" content="Kurzegeschichte" />
+        <meta property="og:description" content="Gratis Kurzgeschichten lesen! Und schreiben." />
+        <meta property="og:url" content="https://kurzegeschichte.de" />
+        <meta property="og:image" content="{{ url_for('static', filename='img/social_cover.png') }}" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="book" />
+        <meta property="og:locale" content="de_DE" />
+        <meta property="og:locale:alternate" content="en_GB" />
+        
         <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     </head>
     <body>
@@ -54,7 +69,7 @@
                         <a href="/">
                             <div class="col-sm-6">
                                 <h1>kurzegeschichte</h1>
-                                <h3>It only takes a few minutes to escape.</h3>
+                                <h3>It only takes a few words to escape.</h3>
                             </div>
                         </a>
                         <div id="menu" class="col-sm-6 menu">
