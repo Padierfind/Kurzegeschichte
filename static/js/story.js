@@ -105,6 +105,8 @@ function load_story_data(){
         $("#timestamp").text("Veröffentlicht am " + timestamp);
         $("#tags").text("Tags: " + tags);
         $("#length").text("Länge: " + length + " Wörter");
+        
+         document.title = title;
     });
 }
 
