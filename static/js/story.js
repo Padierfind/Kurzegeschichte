@@ -103,14 +103,14 @@ function load_story_data(){
         $('meta[name="keywords"]').attr('content', "Kurzgeschichte, lesen, Buch, Geschichte, " + user_id + ", " + title);
         $('meta[name="description"]').attr('content', "Jetzt " + title + " von " + user_id + " gratis auf Kurzegeschichte lesen!");
         $('meta[name="author"]').attr('content', user_id);
+        $('meta[name="twitter:data1"]').attr('content', "ca. " + reading_time + " Minuten");
 
         $('meta[property="og:url"]').attr('content', window.location.href);
         $('meta[property="og:title"]').attr('content', title);
         $('meta[property="twitter:title"]').attr('content', title);
-        $('meta[property="twitter:description"]').attr('content', "Jetzt " + title + " von " + user_id + " gratis auf Kurzegeschichte lesen!");
+        $('meta[property="twitter:description"]').attr('content', 'Jetzt "' + title + '" von ' + user_id + " gratis auf Kurzegeschichte lesen!");
         $('meta[property="al:web:url"]').attr('content', window.location.href);
         $('meta[property="books:author"]').attr('content', user_id);
-        $('meta[property="twitter:data1"]').attr('content', "ca. " + reading_time + " Minuten");
 
         // Page Content
         $("#story_title").text(title);
