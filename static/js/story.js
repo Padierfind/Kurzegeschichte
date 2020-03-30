@@ -94,10 +94,25 @@ function load_story_data(){
         timestamp = result['timestamp'];
         user_id = result['user_id'];
         reading_time = result['reading_time'];
-        console.log(content);
+
         length = countWords(content);
         tags = result['categories'];
 
+        // Meta Tags
+        $('meta[name="title"]').attr('content', title);
+        $('meta[name="keywords"]').attr('content', "Kurzgeschichte, lesen, Buch, Geschichte, " + user_id + ", " + title);
+        $('meta[name="description"]').attr('content', "Jetzt " + title + " von " + user_id + " gratis auf Kurzegeschichte lesen!");
+        $('meta[name="author"]').attr('content', user_id);
+
+        $('meta[property="og:url"]').attr('content', window.location.href);
+        $('meta[property="og:title"]').attr('content', title);
+        $('meta[property="twitter:title"]').attr('content', title);
+        $('meta[property="twitter:description"]').attr('content', "Jetzt " + title + " von " + user_id + " gratis auf Kurzegeschichte lesen!");
+        $('meta[property="al:web:url"]').attr('content', window.location.href);
+        $('meta[property="books:author"]').attr('content', user_id);
+        $('meta[property="twitter:data1"]').attr('content', "ca. " + reading_time + " Minuten");
+
+        // Page Content
         $("#story_title").text(title);
         $("#text-block-1").html(content);
         $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten")
@@ -106,7 +121,7 @@ function load_story_data(){
         $("#tags").text("Tags: " + tags);
         $("#length").text("Länge: " + length + " Wörter");
         
-         document.title = title;
+        document.title = title;
     });
 }
 
