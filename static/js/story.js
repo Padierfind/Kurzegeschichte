@@ -70,7 +70,6 @@ function load_comments(story_id){
                 "</div>");
             });
         }
-        loading_flag = true;
     });
 }
 
@@ -86,42 +85,44 @@ function load_story_data(){
         if(result == "False"){
             display_notification("Wir haben gerade Probleme, die Geschichte aus der " +
                 "Datenbank zu laden. Bitte versuche es später noch einmal.");
-        return;
-    }
-
-        title = result['title'];
-        content = result['content'];
-        timestamp = result['timestamp'];
-        user_id = result['user_id'];
-        reading_time = result['reading_time'];
-
-        length = countWords(content);
-        tags = result['categories'];
-
-        // Meta Tags
-        $('meta[name="title"]').attr('content', title);
-        $('meta[name="keywords"]').attr('content', "Kurzgeschichte, lesen, Buch, Geschichte, " + user_id + ", " + title);
-        $('meta[name="description"]').attr('content', "Jetzt " + title + " von " + user_id + " gratis auf Kurzegeschichte lesen!");
-        $('meta[name="author"]').attr('content', user_id);
-        $('meta[name="twitter:data1"]').attr('content', "ca. " + reading_time + " Minuten");
-
-        $('meta[property="og:url"]').attr('content', window.location.href);
-        $('meta[property="og:title"]').attr('content', title);
-        $('meta[property="twitter:title"]').attr('content', title);
-        $('meta[property="twitter:description"]').attr('content', 'Jetzt "' + title + '" von ' + user_id + " gratis auf Kurzegeschichte lesen!");
-        $('meta[property="al:web:url"]').attr('content', window.location.href);
-        $('meta[property="books:author"]').attr('content', user_id);
-
-        // Page Content
-        $("#story_title").text(title);
-        $("#text-block-1").html(content);
-        $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten")
-        $("#author").html("Geschrieben von <a href=/profile?user=" + user_id.split(" ").join("%20") + ">" + user_id + ".")
-        $("#timestamp").text("Veröffentlicht am " + timestamp);
-        $("#tags").text("Tags: " + tags);
-        $("#length").text("Länge: " + length + " Wörter");
-        
-        document.title = title;
+            return;
+        }
+        else{
+            title = result['title'];
+            content = result['content'];
+            timestamp = result['timestamp'];
+            user_id = result['user_id'];
+            reading_time = result['reading_time'];
+    
+            length = countWords(content);
+            tags = result['categories'];
+    
+            // Meta Tags
+            $('meta[name="title"]').attr('content', title);
+            $('meta[name="keywords"]').attr('content', "Kurzgeschichte, lesen, Buch, Geschichte, " + user_id + ", " + title);
+            $('meta[name="description"]').attr('content', "Jetzt " + title + " von " + user_id + " gratis auf Kurzegeschichte lesen!");
+            $('meta[name="author"]').attr('content', user_id);
+            $('meta[name="twitter:data1"]').attr('content', "ca. " + reading_time + " Minuten");
+    
+            $('meta[property="og:url"]').attr('content', window.location.href);
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="twitter:title"]').attr('content', title);
+            $('meta[property="twitter:description"]').attr('content', 'Jetzt "' + title + '" von ' + user_id + " gratis auf Kurzegeschichte lesen!");
+            $('meta[property="al:web:url"]').attr('content', window.location.href);
+            $('meta[property="books:author"]').attr('content', user_id);
+    
+            // Page Content
+            $("#story_title").text(title);
+            $("#text-block-1").html(content);
+            $("#reading_time").text("Lesezeit ca. " + reading_time + " Minuten")
+            $("#author").html("Geschrieben von <a href=/profile?user=" + user_id.split(" ").join("%20") + ">" + user_id + ".")
+            $("#timestamp").text("Veröffentlicht am " + timestamp);
+            $("#tags").text("Tags: " + tags);
+            $("#length").text("Länge: " + length + " Wörter");
+            
+            document.title = title;
+        }
+        loading_flag = true;
     });
 }
 
