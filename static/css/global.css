@@ -85,16 +85,51 @@ li a {
     text-decoration: none;
 }
 
+li a:hover {
+    color: black;
+}
+
 .header{
-    border-bottom: 2px;
-    border-color:black;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.header .col-sm-6{
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+}
+
+.full_header{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgb(236, 236, 236);
+    background-color: white;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 10px;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -ms-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+    transition: all 600ms ease-in-out;
+    max-height: 200px;
 }
 
 .menu{
     text-align: right;
     margin-top: 50px;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -ms-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+    transition: all 600ms ease-in-out;
+}
+
+.menu_up{
+    margin-top: 0;
 }
 
 .menu li{
@@ -109,7 +144,6 @@ li a {
 }
 
 .menu li a:hover{
-    color: black;
     text-decoration: none;
 }
 
@@ -119,7 +153,30 @@ li a {
 
 .menu_button a{
     text-align: right;
+
     color: black !important;
+}
+
+.menu_button a:visited{
+    text-decoration: none;
+    border:none;
+}
+
+.menu_button a:focus{
+    text-decoration: none;
+    border:none;
+}
+
+.menu_button a:active{
+    text-decoration: none;
+    border:none;
+}
+.menu_button a:hover{
+    color: gray !important;
+}
+
+a:hover {
+    color: gray;
 }
 
 .max_w{
@@ -169,6 +226,10 @@ li a {
     bottom: 0;
 }
 
+.meta a:hover{
+    color:black;
+}
+
 .tag{
     display: inline-block;
 }
@@ -188,18 +249,9 @@ li a {
     color: gray;
 }
 
-.full_header{
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: rgb(236, 236, 236);
-    background-color: white;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 10px;
+.meta_author a:hover{
+    color: black;
 }
-
 .sort{
     margin: 0;
     padding: 0;
@@ -279,6 +331,10 @@ footer{
     font-weight:300;
     color:black;
     text-align:center;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
     background-color: white;
     width: 100%;
@@ -401,6 +457,26 @@ footer{
     margin-bottom: 0;
 }
 
+.inv{
+    -moz-opacity: 0;
+    opacity: 0;
+    -moz-transform: scale(0.01);
+    -webkit-transform: scale(0.01);
+    -o-transform: scale(0.01);
+    -ms-transform: scale(0.01);
+    transform: scale(0.01);
+    transform-origin:top left;
+}
+
+.logo{
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -ms-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+    transition: all 600ms ease-in-out;
+    position: absolute;
+}
+
 
 .cssload-container{
     position: fixed;
@@ -439,9 +515,6 @@ footer{
 }
 
 @media only screen and (max-width: 960px) and (min-width: 706px) {
-    .menu{
-        margin-top: 10px;
-    }
     .preview p{
         min-height: 0;
     }
@@ -461,9 +534,6 @@ footer{
 }
 
 @media only screen and (max-width: 705px) and (min-width: 341px) {
-    .menu{
-        margin-top: 10px;
-    }
     .preview p{
         min-height: 0;
     }
@@ -499,9 +569,6 @@ footer{
 }
 
 @media only screen and (max-width: 340px) and (min-width: 310px) {
-    .menu{
-        margin-top: 10px;
-    }
     .preview p{
         min-height: 0;
     }
@@ -536,9 +603,6 @@ footer{
 }
 
 @media only screen and (max-width: 339px){
-    .menu{
-        margin-top: 10px;
-    }
     .preview p{
         min-height: 0;
     }
