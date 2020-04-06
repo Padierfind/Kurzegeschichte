@@ -24,6 +24,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
 
@@ -92,24 +93,24 @@
 
         <div class="container max_w">
             <div class="row>">
-                <div class="col-sm-12">
-                    <div class="title_page">
-                        Einstellungen
-                    </div>
-                    <hr class="hr_black">
+                <div class="title_page">
+                    Einstellungen
                 </div>
-                <div class="col-sm-3">
+                <hr class="hr_black">
+                <div class="col-sm-3 left_col settings_button">
                     <form action="/delete_account">
                         <button type="submit" class="submit_button">Account löschen</button>
                     </form>
                 </div>
-                <div class="col-sm-9">Mit einem Klick auf diesen Button werden all deine Daten von unseren Servern gelöscht.
+                <div class="col-sm-9 right_col">
+                    Mit einem Klick auf diesen Button werden all deine Daten von unseren Servern gelöscht.
                     Inklusive aller Geschichten, die du auf kurzegeschichte veröffentlicht hast.
                 </div>
             </div>
         </div>
 
         <div class="container max_w">
+            <hr>
             <div class="col-sm-4 copyright">
                 <footer>
                     © 2019 Kurzegeschichte.de
