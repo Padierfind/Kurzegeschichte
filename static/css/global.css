@@ -265,6 +265,8 @@ footer{
 
 .foot_menu{
     text-align: right;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .submit_button{
@@ -374,6 +376,11 @@ footer{
     column-gap: 30px;
 }
 
+.copyright{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 .cssload-container{
   position: fixed;
@@ -415,8 +422,24 @@ footer{
     .menu{
         margin-top: 10px;
     }
+    .preview p{
+        min-height: 0;
+    }
     .preview{
-        min-height: 320px;
+        min-height: 0;
+    }
+    .meta{
+        position: relative;
+    }
+    .readmore{
+        position: relative;
+    }
+    .foot_menu{
+        text-align: left;
+    }
+    .max_w{
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -424,8 +447,21 @@ footer{
     .menu{
         margin-top: 10px;
     }
+    .preview p{
+        min-height: 0;
+    }
     .preview{
-        min-height: 340px;
+        min-height: 0;
+    }
+    .meta{
+        position: relative;
+    }
+    .readmore{
+        position: relative;
+    }
+    .max_w{
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -433,8 +469,24 @@ footer{
     .menu{
         margin-top: 10px;
     }
+    .preview p{
+        min-height: 0;
+    }
     .preview{
-        min-height: 340px;
+        min-height: 0;
+    }
+    .meta{
+        position: relative;
+    }
+    .readmore{
+        position: relative;
+    }
+    .foot_menu{
+        text-align: left;
+    }
+    .max_w{
+        padding-left: 30px;
+        padding-right:s 30px;
     }
 }
 
@@ -442,7 +494,23 @@ footer{
     .menu{
         margin-top: 10px;
     }
+    .preview p{
+        min-height: 0;
+    }
     .preview{
-        min-height: 380px;
+        min-height: 0;
+    }
+    .meta{
+        position: relative;
+    }
+    .readmore{
+        position: relative;
+    }
+    .foot_menu{
+        text-align: left;
+    }
+    .max_w{
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }

@@ -75,77 +75,77 @@
             </div>
         </div>
 
-        <div id="header" class="container-fluid full_header">
+        <div id="header" class="full_header">
             <div class="container header max_w">
-                    <div class="row">
-                        <a href="/">
-                            <div class="col-sm-6">
-                                <h1>kurzegeschichte</h1>
-                                <h3>It only takes a few words to escape.</h3>
-                            </div>
-                        </a>
-                        <div id="menu" class="col-sm-6 menu">
-                            <ul>
-                                <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
-                                <div id="menu_expansion">
-                                    <li><a href="/info">Informationen</a></li>
-                                    <li class="hidden"><a href="/editor">Schreiben</a></li>
-                                    <li class="hidden"><a href="/profile?user=user">Profil</a></li>
-                                    <li class="hidden"><a href="/settings">Einstellungen</a></li>
-                                    <li><a href="/login">Anmeldung</a></li>
-                                    <li class="hidden"><a href="/logout">Logout</a></li>
-                                </div>
-                            </ul>
+                <div class="row">
+                    <a href="/">
+                        <div class="col-sm-6">
+                            <h1>kurzegeschichte</h1>
+                            <h3>It only takes a few words to escape.</h3>
                         </div>
+                    </a>
+                    <div id="menu" class="col-sm-6 menu">
+                        <ul>
+                            <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
+                            <div id="menu_expansion">
+                                <li><a href="/info">Informationen</a></li>
+                                <li class="hidden"><a href="/editor">Schreiben</a></li>
+                                <li class="hidden"><a href="/profile?user=user">Profil</a></li>
+                                <li class="hidden"><a href="/settings">Einstellungen</a></li>
+                                <li><a href="/login">Anmeldung</a></li>
+                                <li class="hidden"><a href="/logout">Logout</a></li>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="container max_w">
-                <blockquote id="front_quote" class="blockquote">
-                    <div class="hide_quote_button"><a href="javascript:close_quote();">X</a></div>
-                    <p>
-                        A short story is a love affair,<br> a novel is a marriage.<br> A short story is a photograph;<br> a novel is a film.
-                    </p>
-                    <div class="quote_author">
-                        - Lorrie Moore
-                    </div>
-                </blockquote>
-                <hr id="quote_hr">
-                <div class="col-sm-12 sort">
-                    <ul id="sorting_selection">
-                        <li><b>Sortiere nach</b></li>
-                        <li id="recommendations" class="selected"><a href="javascript: apply_filter_sorting('#recommendations');">Empfehlungen</a></li>
-                        <li id="newest"><a href="javascript: apply_filter_sorting('#newest');">Neuste</a></li>
-                        <li id="popular"><a href="javascript: apply_filter_sorting('#popular');">Beliebt</a></li>
-                    </ul> 
-                </div>                
-                <div class="col-sm-12 sort">
-                    <ul id="length_selection">
-                        <li><b>Lesezeit</b></li>
-                        <li id="veryshort"><a href="javascript: apply_filter('#veryshort');">< 5 Minuten</a></li>
-                        <li id="short"><a href="javascript: apply_filter('#short');">5-15 Minuten</a></li>
-                        <li id="medium"><a href="javascript: apply_filter('#medium');">15-45 Minuten</a></li>
-                        <li id="long"><a href="javascript: apply_filter('#long');">> 45 Minuten</a></li>
-                    </ul> 
+        <div class="container max_w">
+            <blockquote id="front_quote" class="blockquote">
+                <div class="hide_quote_button"><a href="javascript:close_quote();">X</a></div>
+                <p>
+                    A short story is a love affair,<br> a novel is a marriage.<br> A short story is a photograph;<br> a novel is a film.
+                </p>
+                <div class="quote_author">
+                    - Lorrie Moore
                 </div>
-
-                <div class="col-sm-12 sort">
-                    <ul id="category_selection">
-                        <li><b>Kategorien</b></li>
-                        <li id="Love"><a href="javascript: apply_filter('#Love');">#Liebe</a></li>
-                        <li id="Drama"><a href="javascript: apply_filter('#Drama');">#Drama</a></li>
-                        <li id="Horror"><a href="javascript: apply_filter('#Horror');">#Horror</a></li>
-                        <li id="Thriller"><a href="javascript: apply_filter('#Krimi');">#Krimi</a></li>
-                        <li id="Scifi"><a href="javascript: apply_filter('#Scifi');">#Scifi</a></li>
-                        <li id="Fantasy"><a href="javascript: apply_filter('#Fantasy');">#Fantasy</a></li>
-                        <li id="Satire"><a href="javascript: apply_filter('#Satire');">#Satire</a></li>
-                        <li id="Present"><a href="javascript: apply_filter('#Present');">#Gegenwart</a></li>
-                        <li id="Life"><a href="javascript: apply_filter('#Life');">#Leben</a></li>
-                        <li id="Other"><a href="javascript: apply_filter('#Other');">#Sonstiges</a></li>
-                    </ul> 
-                </div>
+            </blockquote>
+            <hr id="quote_hr">
+            <div class="col-sm-12 sort">
+                <ul id="sorting_selection">
+                    <li><b>Sortiere nach</b></li>
+                    <li id="recommendations" class="selected"><a href="javascript: apply_filter_sorting('#recommendations');">Empfehlungen</a></li>
+                    <li id="newest"><a href="javascript: apply_filter_sorting('#newest');">Neuste</a></li>
+                    <li id="popular"><a href="javascript: apply_filter_sorting('#popular');">Beliebt</a></li>
+                </ul> 
+            </div>                
+            <div class="col-sm-12 sort">
+                <ul id="length_selection">
+                    <li><b>Lesezeit</b></li>
+                    <li id="veryshort"><a href="javascript: apply_filter('#veryshort');">< 5 Minuten</a></li>
+                    <li id="short"><a href="javascript: apply_filter('#short');">5-15 Minuten</a></li>
+                    <li id="medium"><a href="javascript: apply_filter('#medium');">15-45 Minuten</a></li>
+                    <li id="long"><a href="javascript: apply_filter('#long');">> 45 Minuten</a></li>
+                </ul> 
             </div>
+
+            <div class="col-sm-12 sort">
+                <ul id="category_selection">
+                    <li><b>Kategorien</b></li>
+                    <li id="Love"><a href="javascript: apply_filter('#Love');">#Liebe</a></li>
+                    <li id="Drama"><a href="javascript: apply_filter('#Drama');">#Drama</a></li>
+                    <li id="Horror"><a href="javascript: apply_filter('#Horror');">#Horror</a></li>
+                    <li id="Thriller"><a href="javascript: apply_filter('#Krimi');">#Krimi</a></li>
+                    <li id="Scifi"><a href="javascript: apply_filter('#Scifi');">#Scifi</a></li>
+                    <li id="Fantasy"><a href="javascript: apply_filter('#Fantasy');">#Fantasy</a></li>
+                    <li id="Satire"><a href="javascript: apply_filter('#Satire');">#Satire</a></li>
+                    <li id="Present"><a href="javascript: apply_filter('#Present');">#Gegenwart</a></li>
+                    <li id="Life"><a href="javascript: apply_filter('#Life');">#Leben</a></li>
+                    <li id="Other"><a href="javascript: apply_filter('#Other');">#Sonstiges</a></li>
+                </ul> 
+            </div>
+        </div>
 
         <div class="container max_w">
             <div id="preview_container" class="row">
@@ -173,24 +173,21 @@
             </div>
         </div>
 
-        <div class="foot container-fluid">
-            <div class="container max_w">
-                <div class="col-sm-4">
-                    <footer>
-                        © 2019 Kurzegeschichte.de
-                    </footer>
-                </div>
-                <div class="col-sm-8 foot_menu">
-                    <footer>
-                        <a href="/imprint">Impressum</a> -
-                        <a href="/press">Presse</a> -
-                        <a href="/privacy">Datenschutz</a> -
-                        <a href="/terms">Nutzungsbedingungen</a>
-                    </footer>
-                </div>
+        <div class="container max_w">
+            <div class="col-sm-4 copyright">
+                <footer>
+                    © 2019 Kurzegeschichte.de
+                </footer>
             </div>
-        </div>
-        
+            <div class="col-sm-8 foot_menu">
+                <footer>
+                    <a href="/imprint">Impressum</a> -
+                    <a href="/press">Presse</a> -
+                    <a href="/privacy">Datenschutz</a> -
+                    <a href="/terms">Nutzungsbedingungen</a>
+                </footer>
+            </div>
+        </div>        
     </body>
 
     <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
