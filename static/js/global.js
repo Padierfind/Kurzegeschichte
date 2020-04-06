@@ -22,6 +22,39 @@ function check_if_user_is_logged_in(){
     });
 }
 
+var didScroll;
+var lastScrollTop = 0;
+var delta = 80;
+var navbarHeight = $('header').outerHeight();
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop){
+        // Scroll Down
+        console.log("Scroll Down");
+        $("#menu").addClass("menu_up");
+        $("#logo").addClass("inv");
+        $("#up_logo").removeClass("inv");
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            console.log("Scroll Up");
+            $("#menu").removeClass("menu_up");
+            $("#logo").removeClass("inv");
+            $("#up_logo").addClass("inv");    
+        }
+    }
+    
+    lastScrollTop = st;
+}
+
 $( document ).ready(function() {
     $("#menu_expansion").hide();
 
@@ -31,15 +64,16 @@ $( document ).ready(function() {
     }
 
     check_if_user_is_logged_in();
-
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            $("#header").css("opacity", "100");
-        } else {
-            $("#header").css("opacity", "0");
+    
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+    
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
         }
-        prevScrollpos = currentScrollPos;
-    }
+    }, 250);
+    
 });

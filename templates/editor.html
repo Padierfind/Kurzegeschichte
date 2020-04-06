@@ -74,31 +74,30 @@
         </div>
 
         <div id="header" class="full_header">
-            <div class="container header max_w">
-                <div class="row">
-                    <a href="/">
-                        <div class="col-sm-6">
-                            <h1>kurzegeschichte</h1>
-                            <h3>It only takes a few words to escape.</h3>
-                        </div>
-                    </a>
-                    <div id="menu" class="col-sm-6 menu">
-                        <ul>
-                            <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
-                            <div id="menu_expansion">
-                                <li><a href="/info">Informationen</a></li>
-                                <li class="hidden"><a href="/editor">Schreiben</a></li>
-                                <li class="hidden"><a href="/profile?user=user">Profil</a></li>
-                                <li class="hidden"><a href="/settings">Einstellungen</a></li>
-                                <li><a href="/login">Anmeldung</a></li>
-                                <li class="hidden"><a href="/logout">Logout</a></li>
-                            </div>
-                        </ul> 
+            <div class="row header max_w center_div container">
+                <a class="col-sm-6" href="/">
+                    <div id="logo" class=logo>
+                        <h1>kurzegeschichte</h1>
+                        <h3>It only takes a few words to escape.</h3>
                     </div>
+                    <img id="up_logo" class="inv logo" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                </a>
+                <div id="menu" class="col-sm-6 menu">
+                    <ul>
+                        <li id="menu_button" class="menu_button"><a href="javascript: toggleMenu();">Menü</a></li>
+                        <div id="menu_expansion">
+                            <li><a href="/info">Informationen</a></li>
+                            <li class="hidden"><a href="/editor">Schreiben</a></li>
+                            <li class="hidden"><a href="/profile?user=user">Profil</a></li>
+                            <li class="hidden"><a href="/settings">Einstellungen</a></li>
+                            <li><a href="/login">Anmeldung</a></li>
+                            <li class="hidden"><a href="/logout">Logout</a></li>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </div>
-
+    
         <div class="container max_w">
             <div class="row content">
                 <div class="col-sm-12">
