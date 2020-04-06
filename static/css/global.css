@@ -396,6 +396,11 @@ footer{
     float: none;
 }
 
+.hr_footer{
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
 
 .cssload-container{
     position: fixed;
