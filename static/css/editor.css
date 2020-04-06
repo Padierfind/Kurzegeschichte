@@ -38,6 +38,7 @@
 .next_container{
     text-align: right;
     padding: 0;
+    float: right;
 }
 
 .input_field_preview{

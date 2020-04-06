@@ -28,6 +28,7 @@
     display: inline-block;    
     width: 90%;
     padding-left: 15px;
+    margin-bottom: 30px;
 }
 
 .register_button{
@@ -35,6 +36,16 @@
     background: black;
     border-color: black;
 }
+
+.or{
+  text-align: center;
+  margin-top: 25px;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: none;
+}
+
 
 .check {
     cursor: pointer;
@@ -96,4 +107,12 @@
     transition: all 0.2s linear;
     transition-delay: 0.15s;
   }
-  
+
+@media only screen and (max-width: 705px) {
+  .form_wrapper{
+    height: auto;
+  }
+  .or{
+    display: block;
+  }
+}
