@@ -26,15 +26,19 @@
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
         <link href="https://cdn.quilljs.com/1.2.2/quill.bubble.css" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}">
-
+        
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="/site.webmanifest">
+
 
         <title>Kurzegeschichte - Editor</title>
         <meta charset="utf-8">
@@ -80,7 +84,10 @@
                         <h1>kurzegeschichte</h1>
                         <h3>It only takes a few words to escape.</h3>
                     </div>
-                    <img id="up_logo" class="inv logo" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                    <div id="up_logo" class="inv logo">
+                        <img class="up_logo_img" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                        <p class="up_logo_text">urzegeschichte</p>    
+                    </div>
                 </a>
                 <div id="menu" class="col-sm-6 menu">
                     <ul>
@@ -100,7 +107,7 @@
     
         <div class="container max_w">
             <div class="row content">
-                <div class="col-sm-12">
+                <div class="col-sm-12 border_on_side">
                     <form id="preview_form" action="/save_draft" method="post">
                         <input id="title" type="text" name="title" class="input_field_title" maxlength="80" placeholder="Überschrift">
                         <input id="content" type="content" name="content" class="hidden">
@@ -114,22 +121,24 @@
             </div>
         </div>
 
-        <div class="container max_w">
+        <div>
             <hr class="hr_footer">
-            <div class="col-sm-4 copyright">
-                <footer>
-                    © 2019 Kurzegeschichte.de
-                </footer>
+            <div class="container max_w foot">
+                <div class="col-sm-4 copyright">
+                    <footer>
+                        © 2019 Kurzegeschichte.de
+                    </footer>
+                </div>
+                <div class="col-sm-8 foot_menu">
+                    <footer>
+                        <a href="/imprint">Impressum</a> -
+                        <a href="/press">Presse</a> -
+                        <a href="/privacy">Datenschutz</a> -
+                        <a href="/terms">Nutzungsbedingungen</a>
+                    </footer>
+                </div>
             </div>
-            <div class="col-sm-8 foot_menu">
-                <footer>
-                    <a href="/imprint">Impressum</a> -
-                    <a href="/press">Presse</a> -
-                    <a href="/privacy">Datenschutz</a> -
-                    <a href="/terms">Nutzungsbedingungen</a>
-                </footer>
-            </div>
-        </div>                
+        </div>
+    
     </body>
-
 </html>
