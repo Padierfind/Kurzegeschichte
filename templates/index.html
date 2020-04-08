@@ -22,7 +22,6 @@
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
@@ -82,7 +81,10 @@
                         <h1>kurzegeschichte</h1>
                         <h3>It only takes a few words to escape.</h3>
                     </div>
-                    <img id="up_logo" class="inv logo" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                    <div id="up_logo" class="inv logo">
+                        <img class="up_logo_img" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                        <p class="up_logo_text">urzegeschichte</p>    
+                    </div>
                 </a>
                 <div id="menu" class="col-sm-6 menu">
                     <ul>
@@ -100,7 +102,7 @@
             </div>
         </div>
 
-        <div class="container max_w">
+        <div class="container max_w border_on_side no_padding_bottom">
             <blockquote id="front_quote" class="blockquote">
                 <div class="hide_quote_button"><a href="javascript:close_quote();">X</a></div>
                 <p>
@@ -111,7 +113,7 @@
                 </div>
             </blockquote>
             <hr id="quote_hr">
-            <div class="col-sm-12 sort">
+            <div class="col-sm-12 sort ">
                 <ul id="sorting_selection">
                     <li><b>Sortiere nach</b></li>
                     <li id="recommendations" class="selected"><a href="javascript: apply_filter_sorting('#recommendations');">Empfehlungen</a></li>
@@ -146,17 +148,21 @@
             </div>
         </div>
 
-        <div class="container max_w">
+        <div class="container max_w border_on_side">
             <div id="preview_container" class="row">
             </div>
-            <div class="call_to_action">
-                <div class="call_to_action_text">
-                    Und wohin wird uns deine Geschichte führen?
-                </div>
-                <div class="col-sm-3 center_div">
-                    <a href="/editor"><button type="button" class="submit_button">Schreibe jetzt</button></a>
-                </div>
+        </div>
+
+        <div class="call_to_action border_on_side no_padding_bottom">
+            <div class="container max_w">
+                Und wohin wird uns deine Geschichte führen?
             </div>
+            <div class="container max_w">
+                <a href="/editor">Schreibe jetzt.</a>
+            </div>
+        </div>
+
+        <div class="container max_w border_on_side no_padding_bottom">
             <div id="preview_container_2" class="row">
             </div>
             <div id="page_counter" class="page_index_container">
@@ -174,22 +180,25 @@
             </div>
         </div>
 
-        <div class="container max_w">
+        <div>
             <hr class="hr_footer">
-            <div class="col-sm-4 copyright">
-                <footer>
-                    © 2019 Kurzegeschichte.de
-                </footer>
+            <div class="container max_w foot">
+                <div class="col-sm-4 copyright">
+                    <footer>
+                        © 2019 Kurzegeschichte.de
+                    </footer>
+                </div>
+                <div class="col-sm-8 foot_menu">
+                    <footer>
+                        <a href="/imprint">Impressum</a> -
+                        <a href="/press">Presse</a> -
+                        <a href="/privacy">Datenschutz</a> -
+                        <a href="/terms">Nutzungsbedingungen</a>
+                    </footer>
+                </div>
             </div>
-            <div class="col-sm-8 foot_menu">
-                <footer>
-                    <a href="/imprint">Impressum</a> -
-                    <a href="/press">Presse</a> -
-                    <a href="/privacy">Datenschutz</a> -
-                    <a href="/terms">Nutzungsbedingungen</a>
-                </footer>
-            </div>
-        </div>        
+        </div>
+           
     </body>
 
     <script src="{{ url_for('static', filename='js/loading.js') }}"></script>

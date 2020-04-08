@@ -104,7 +104,7 @@
 																	<tr>
 																		<td align="left" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
 																			<div style="font-family: 'Source Sans Pro', sans-serif;font-size:11px;line-height:1.5;text-align:left;color:#000000;">
-																				<p>Sollte der Link aus irgend einem Grund nicht funktionieren kopiere folgende Addresse in die Address-Leiste deines Browsers: <a style="color:black" href="https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}">https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}</a></p>
+																				<p>Sollte der Link aus irgend einem Grund nicht funktionieren kopiere folgende Addresse in die Address-Leiste deines Browsers: <a style="color:#2f2f2f" href="https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}">https://www.kurzegeschichte.de/confirm_registration?user_id=${PERSON_NAME}</a></p>
 																			</div>
 																		</td>
 																	</tr>

@@ -21,7 +21,6 @@
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
@@ -72,7 +71,10 @@
                         <h1>kurzegeschichte</h1>
                         <h3>It only takes a few words to escape.</h3>
                     </div>
-                    <img id="up_logo" class="inv logo" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                    <div id="up_logo" class="inv logo">
+                        <img class="up_logo_img" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                        <p class="up_logo_text">urzegeschichte</p>    
+                    </div>
                 </a>
                 <div id="menu" class="col-sm-6 menu">
                     <ul>
@@ -90,40 +92,42 @@
             </div>
         </div>
         
-        <div class="container max_w">
+        <div class="container max_w border_on_side">
             <div class="row>">
                 <div class="title_page">
                     Einstellungen
                 </div>
                 <hr class="hr_black">
-                <div class="col-sm-3 left_col settings_button">
+                <div class="col-sm-4 left_col settings_button">
                     <form action="/delete_account">
                         <button type="submit" class="submit_button">Account löschen</button>
                     </form>
                 </div>
-                <div class="col-sm-9 right_col">
+                <div class="col-sm-8 right_col">
                     Mit einem Klick auf diesen Button werden all deine Daten von unseren Servern gelöscht.
                     Inklusive aller Geschichten, die du auf kurzegeschichte veröffentlicht hast.
                 </div>
             </div>
         </div>
 
-        <div class="container max_w">
+        <div>
             <hr class="hr_footer">
-            <div class="col-sm-4 copyright">
-                <footer>
-                    © 2019 Kurzegeschichte.de
-                </footer>
+            <div class="container max_w foot">
+                <div class="col-sm-4 copyright">
+                    <footer>
+                        © 2019 Kurzegeschichte.de
+                    </footer>
+                </div>
+                <div class="col-sm-8 foot_menu">
+                    <footer>
+                        <a href="/imprint">Impressum</a> -
+                        <a href="/press">Presse</a> -
+                        <a href="/privacy">Datenschutz</a> -
+                        <a href="/terms">Nutzungsbedingungen</a>
+                    </footer>
+                </div>
             </div>
-            <div class="col-sm-8 foot_menu">
-                <footer>
-                    <a href="/imprint">Impressum</a> -
-                    <a href="/press">Presse</a> -
-                    <a href="/privacy">Datenschutz</a> -
-                    <a href="/terms">Nutzungsbedingungen</a>
-                </footer>
-            </div>
-        </div>        
+        </div>
+            
     </body>
-
 </html>

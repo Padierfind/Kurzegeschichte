@@ -31,16 +31,29 @@
     margin-bottom: 30px;
 }
 
+.login_button{
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 .register_button{
     color: white;
-    background: black;
-    border-color: black;
+    background: #2f2f2f;
+    border-color: #2f2f2f;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.register_button:hover{
+  color: #2f2f2f;
+  background: white;
+  border-color: #2f2f2f;
 }
 
 .or{
   text-align: center;
   margin-top: 25px;
-  color: black;
+  color: #2f2f2f;
   padding-top: 20px;
   padding-bottom: 20px;
   display: none;
@@ -93,10 +106,10 @@
     opacity: 1;
   }
   .check:hover svg {
-    stroke: black;
+    stroke: #2f2f2f;
   }
   #cbx:checked + .check svg {
-    stroke: black;
+    stroke: #2f2f2f;
   }
   #cbx:checked + .check svg path {
     stroke-dashoffset: 60;

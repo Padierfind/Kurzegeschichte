@@ -150,7 +150,10 @@ def publish_comment():
                                                        json_to_write=test_dict)
 
     if result_of_db_operation['success'] is True:
-        return redirect(url_for('main_bps.display_story', story_id=story_id))
+        return redirect(url_for('main_bps.display_story', story_id=story_id, notification='Dein Kommentar wurde '
+                                                                                          'veröffentlicht. Danke dafür,'
+                                                                                          ' dass du ein Teil dieser '
+                                                                                          'Community bist!'))
     else:
         return redirect(url_for('main_bps.display_story', story_id=story_id, notification='Etwas ist schief gelaufen. '
                                                                                           'Bitte versuche es '

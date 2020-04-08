@@ -20,7 +20,6 @@
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/story.css') }}">
@@ -72,7 +71,10 @@
                         <h1>kurzegeschichte</h1>
                         <h3>It only takes a few words to escape.</h3>
                     </div>
-                    <img id="up_logo" class="inv logo" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                    <div id="up_logo" class="inv logo">
+                        <img class="up_logo_img" src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="logo" height="20" width="20">
+                        <p class="up_logo_text">urzegeschichte</p>    
+                    </div>
                 </a>
                 <div id="menu" class="col-sm-6 menu">
                     <ul>
@@ -90,7 +92,7 @@
             </div>
         </div>
     
-        <div class="container max_w">
+        <div class="container max_w border_on_side">
             <div class="row">
                 <div class="col-sm-12">
                     <div id="story_title" class="title_page">
@@ -111,7 +113,7 @@
                         <div class="title">Über den Entwickler</div><br>
                         Entwickelt wurde <b>kurzegeschichte</b> von Patrick Tobler. Er ist 21 Jahre alt und studiert Medieninformatik in Stuttgart. Die Seite wird von ihm als Nebenprojekt betrieben und verfolgt zurzeit keinerlei Gewinnabsichten. In seiner Freizeit spielt Patrick gerne Computerspiele, programmiert (z.B. Websites wie diese hier) und liest lange und kurze Bücher. Für mehr Informationen könnt ihr gerne seine <a href="https://www.tobler.io">Website</a>, sein <a href="https://www.linkedin.com/in/patrick-tobler-6593b912b/">LinkedIn Profil</a> oder seinen <a href="https://twitter.com/Padierfind">Twitter Account</a> besuchen.
                         <br><br>
-                        <div class="title">Technische Daten</div>
+                        <div class="title">Technische Daten</div><br>
                         <li>
                             <ul><b>Frontend:</b> HTML, CSS, Javascript (Jquery) und Bootstrap</ul>
                             <ul><b>Backend:</b> Python, Flask auf einem Azure Server</ul>
@@ -125,22 +127,24 @@
             </div>
         </div>
 
-        <div class="container max_w">
+        <div>
             <hr class="hr_footer">
-            <div class="col-sm-4 copyright">
-                <footer>
-                    © 2019 Kurzegeschichte.de
-                </footer>
-            </div>
-            <div class="col-sm-8 foot_menu">
-                <footer>
-                    <a href="/imprint">Impressum</a> -
-                    <a href="/press">Presse</a> -
-                    <a href="/privacy">Datenschutz</a> -
-                    <a href="/terms">Nutzungsbedingungen</a>
-                </footer>
+            <div class="container max_w foot">
+                <div class="col-sm-4 copyright">
+                    <footer>
+                        © 2019 Kurzegeschichte.de
+                    </footer>
+                </div>
+                <div class="col-sm-8 foot_menu">
+                    <footer>
+                        <a href="/imprint">Impressum</a> -
+                        <a href="/press">Presse</a> -
+                        <a href="/privacy">Datenschutz</a> -
+                        <a href="/terms">Nutzungsbedingungen</a>
+                    </footer>
+                </div>
             </div>
         </div>
+    
     </body>
-
 </html> 

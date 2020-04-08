@@ -28,7 +28,8 @@
     padding-top: 15px;
     font-size: 36px;
     font-weight: bold;
-    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
 }
 
 .ql-editor.ql-blank::before{
