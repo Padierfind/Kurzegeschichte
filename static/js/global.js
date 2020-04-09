@@ -2,6 +2,11 @@ function toggleMenu(){
     $("#menu_expansion").toggle('slow');
 }
 
+function countWords(txt) {
+    console.log(txt);
+    return txt.trim().split(/\s+/).length;
+}
+
 function display_notification(notification_text){
     $("#notification").text(notification_text);
     $("#notification").slideDown("fast");

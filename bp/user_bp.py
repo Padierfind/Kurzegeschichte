@@ -120,10 +120,28 @@ def publish_story_and_redirect():
     result_of_db_operation = handler.write_to_database(db_name=db, collection_name=collection, json_to_write=test_dict)
 
     if result_of_db_operation['success'] is True:
-        return redirect(url_for('main_bps.display_story', story_id=story_id))
+        return redirect(url_for('main_bps.display_story', story_id=story_id, notification='Herzlichen Glückwunsch! Deine Story wurde soeben veröffentlicht.'))
     else:
         return redirect(url_for('user_bps.display_editor', notification='Etwas ist schief gelaufen. Bitte versuche es '
                                                                         'später noch ein Mal.'))
+
+
+
+@user_bp.route('/get_story_data_without_preview/<story_id>', methods=['GET'])
+@login_required
+def async_get_story_data_without_preview(story_id):
+    print('In Method: get_story_data_without_preview()')
+
+    handler = DbHandler()
+    db = 'test' # change for production
+    collection = 'stories'
+    result_of_db_operation_story = handler.read_one_doc_by_id_from_database(db_name=db, collection_name=collection,
+                                                                            doc_id=story_id)
+
+    if result_of_db_operation_story['success'] is True:
+        return result_of_db_operation_story
+    else:
+        return 'False'
 
 
 @user_bp.route('/publish_comment', methods=['POST'])
