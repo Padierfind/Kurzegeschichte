@@ -73,11 +73,6 @@ function load_comments(story_id){
     });
 }
 
-function countWords(txt) {
-    console.log(txt);
-    return txt.trim().split(/\s+/).length;
-}
-
 function load_story_data(){
     $.ajax({
         url: "/get_story_data/" + story_id

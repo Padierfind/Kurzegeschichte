@@ -358,7 +358,7 @@ footer{
     transition: all 0.2s;
     background-color: white;
     width: 340px;
-    max-width: 340px;
+    max-width: 100%;
     float: right;
 }
 

@@ -13,12 +13,14 @@
         </script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 
         <script src="{{ url_for('static', filename='js/global.js') }}"></script> 
-        <script src="{{ url_for('static', filename='js/story.js') }}"></script>
         <script src="{{ url_for('static', filename='js/story_preview.js') }}"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
@@ -74,6 +76,14 @@
     <body>
         <div id="notification" class="notification">
             Alarm! Please try again.
+        </div>
+
+        <div id="cssload-container" class="cssload-container">
+            <div class="ml6">
+              <span class="text-wrapper">
+                <span class="letters">Lädt...</span>
+              </span>
+            </div>
         </div>
 
         <div id="header" class="full_header">
@@ -152,10 +162,10 @@
                                 <div class="title">
                                     Bearbeite die Vorschau hier:
                                 </div>
-                                <textarea id="input_field_preview" name="preview_text" class="input_field_preview" placeholder="Vorschau Text" maxlength="250" rows="4" required></textarea>
+                                <textarea id="input_field_preview" name="preview_text" value="" class="input_field_preview" placeholder="Vorschau Text" maxlength="250" rows="4" required="required"></textarea>
                                 <p id="text_area_feedback" class="text_area_feedback">0/250 Zeichen</p>
 
-                                <select id="category_selection" name="selected_categories" class="js-select2 category_selection" multiple required>
+                                <select id="category_selection" name="selected_categories" class="js-select2 category_selection" onchange="change_tags();" multiple required>
                                     <option value="Love">Liebe</option>
                                     <option value="Drama">Drama</option>
                                     <option value="Horror">Horror</option>
@@ -166,15 +176,17 @@
                                     <option value="Present">Gegenwart</option>
                                     <option value="Life">Leben</option>
                                     <option value="Other">Sonstiges</option>
+                                    <option selected value="DE">Sprache: Deutsch</option>
+                                    <option value="EN">Sprache: Englisch</option>
                                 </select>
 
-                            <input id="title" type="text" name="title" class="hidden">
-                            <input id="user_id" type="text" name="user_id" class="hidden">
-                            <input id="timestamp" type="text" name="timestamp" class="hidden">
-                            <input id="reading_time_form" type="text" name="reading_time" class="hidden">
-                            <input id="story_id" type="text" name="story_id" class="hidden">
+                                <input id="title" type="text" name="title" class="hidden">
+                                <input id="user_id" type="text" name="user_id" class="hidden">
+                                <input id="timestamp" type="text" name="timestamp" class="hidden">
+                                <input id="reading_time_form" type="text" name="reading_time" class="hidden">
+                                <input id="story_id" type="text" name="story_id" class="hidden">
 
-                            <button type="button" class="submit_button next_preview_padding" onclick="publish_story();">Veröffentlichen</button>
+                                <button type="button" class="submit_button next_preview_padding" onclick="publish_story();">Veröffentlichen</button>
                             </div>
 
                         </form>
@@ -201,7 +213,6 @@
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -225,4 +236,7 @@
         </div>
                 
     </body>
+
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+
 </html> 
