@@ -86,7 +86,7 @@
 																				<p><span style="font-size:16px;">Hallo ${PERSON_NAME}! Danke f&#xFC;r Deine Registrierung!</span></p>
 																				<p><span style="font-size:16px;">Wir freuen uns dich bei kurzegeschichte willkommen hei&#xDF;en zu k&#xF6;nnen.</span></p>
 																				<p></p>
-																				<p><span style="font-size:16px;">Bitte klicke auf den unten klickenden Link um deine Registrierung zu best&#xE4;tigen.</span></p>
+																				<p><span style="font-size:16px;">Bitte klicke auf den unten stehenden Link um deine Registrierung zu best&#xE4;tigen.</span></p>
 																			</div>
 																		</td>
 																	</tr>
