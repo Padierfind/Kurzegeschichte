@@ -600,6 +600,10 @@ footer{
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    .preview{
+        min-height: 400px;
+    }
 }
 
 @media only screen and (max-width: 705px) and (min-width: 341px) {
