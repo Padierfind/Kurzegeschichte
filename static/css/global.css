@@ -212,7 +212,7 @@ a:hover {
     margin-bottom: 0;
     font-family: 'Playfair Display', serif;
     text-align: left !important;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     /*text-transform: uppercase;*/
 }
 
@@ -395,7 +395,7 @@ footer{
 
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 5vw;
     text-align: left;
 }
 
@@ -596,18 +596,6 @@ footer{
 }
 
 @media only screen and (max-width: 960px) and (min-width: 706px) {
-    .preview p{
-        min-height: 0;
-    }
-    .preview{
-        min-height: 0;
-    }
-    .meta{
-        position: relative;
-    }
-    .readmore{
-        position: relative;
-    }
     .max_w{
         padding-left: 30px;
         padding-right: 30px;
@@ -650,6 +638,10 @@ footer{
     }
     .copyright{
         text-align: center;
+    }
+
+    .menu{
+        margin-top: 80px;
     }
 }
 
