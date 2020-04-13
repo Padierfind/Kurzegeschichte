@@ -67,11 +67,12 @@ def verify_and_login_user():
 
     user = User(email=email, password=password)
     user_from_db = user.check_if_user_exists()
-    user_id: str = user_from_db['result']['user_id']
 
     if not user_from_db:
         return redirect(url_for('authentication_bps.display_login_registration_page', notification='Bitte registriere '
                                                                                                    'dich zuerst.'))
+                                                                                                   
+    user_id: str = user_from_db['result']['user_id']
 
     is_authenticated = user.check_password(saved_password=user_from_db['result']['password'], input_password=password)
 
