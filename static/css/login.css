@@ -34,6 +34,7 @@
 .login_button{
   width: 100% !important;
   max-width: 100% !important;
+  float: none !important;
 }
 
 .register_button{
@@ -42,6 +43,7 @@
     border-color: #2f2f2f;
     width: 100% !important;
     max-width: 100% !important;
+    float: none !important;
 }
 
 .register_button:hover{

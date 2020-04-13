@@ -647,6 +647,9 @@ footer{
     .menu{
         margin-top: 80px;
     }
+    .blockquote p{
+        line-height: 2;
+    }
 }
 
 @media only screen and (max-width: 340px) and (min-width: 310px) {
@@ -687,6 +690,9 @@ footer{
     }
     .menu{
         margin-top: 100px;
+    }
+    .blockquote p{
+        line-height: 2;
     }
 }
 
@@ -729,5 +735,8 @@ footer{
     }
     .menu{
         margin-top: 100px;
+    }
+    .blockquote p{
+        line-height: 2;
     }
 }
