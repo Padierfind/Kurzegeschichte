@@ -109,8 +109,8 @@
                 </div>
                 <form action="/login_user" method="POST">
                     <div class="form_wrapper">
-                        <input class="login_form_inputs" type="email" name="email" placeholder="Email">
-                        <input class="login_form_inputs" type="password" name="password" placeholder="Passwort"><br>
+                        <input class="login_form_inputs" type="email" name="email" placeholder="Email" required>
+                        <input class="login_form_inputs" type="password" name="password" placeholder="Passwort" required><br>
                     </div>
                     <button type="submit" class="submit_button continue_button login_button">Login</button>
                 </form>
@@ -126,9 +126,9 @@
                 </div>
                 <form action="/register_user" method="POST">
                     <div class="form_wrapper">
-                        <input class="login_form_inputs" type="name" name="name" placeholder="Benutzername"><br>
-                        <input class="login_form_inputs" type="email" name="email" placeholder="Email">
-                        <input class="login_form_inputs" type="password" name="password" placeholder="Passwort">
+                        <input class="login_form_inputs" type="name" name="name" placeholder="Benutzername" required><br>
+                        <input class="login_form_inputs" type="email" name="email" placeholder="Email" required>
+                        <input class="login_form_inputs" type="password" name="password" placeholder="Passwort" required>
 
                         <input type="checkbox" id="cbx" style="display: none;">
                         <label for="cbx" class="check">
