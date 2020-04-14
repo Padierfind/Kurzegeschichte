@@ -1,4 +1,4 @@
-![kurzegeschichte logo](/static/img/feature_graphic.png)
+![kurzegeschichte logo](/static/img/social_cover.png)
 
 # kurzegeschichte
 > A short story is a love affair,
