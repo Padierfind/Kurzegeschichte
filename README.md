@@ -21,5 +21,5 @@ Currently kurzegeschichte is being developed by [myself](https://www.tobler.io) 
 ### Links
 * German: [kurzegeschichte.de](https://www.kurzegeschichte.de)
 * English: -- Coming Soon
-* Android: -- [Link to Play Store](https://play.google.com/store/apps/details?id=io.tobler.kurzegeschichte)
+* Android: [Play Store](https://play.google.com/store/apps/details?id=io.tobler.kurzegeschichte)
 * IOS: -- Coming Soon
